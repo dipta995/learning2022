@@ -60,7 +60,8 @@ if(isset($_POST['login'])){
       $result = $con->query($query);
       if ($result->num_rows > 0) {
           $value = mysqli_fetch_array($result);
-          $_SESSION['role'] = $value['name'];
+          $_SESSION['active'] = "active";
+          $_SESSION['role'] = $value['role'];
           $_SESSION['first_name'] = $value['first_name'];
           $_SESSION['last_name'] = $value['last_name'];
           $_SESSION['email'] = $value['email'];
