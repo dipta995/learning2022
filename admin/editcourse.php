@@ -41,7 +41,7 @@ else {
                         $move_image = "../image/".$unique_image;
                         
                         if (empty($short_description) ) {
-                            echo "<span class='error-msg'>Field Must Not be Empty</span>"; 
+                            echo "<span class='error'>Field Must Not be Empty</span>"; 
                         }elseif (empty($file_ext)) {
                             $sql = "UPDATE courses  
                             SET
@@ -58,7 +58,7 @@ else {
                               
                                     move_uploaded_file($file_temp,$move_image);
                                   
-                           echo "<span class='success-msg'>New record created successfully</span>";
+                           echo "<span class='success'>New record created successfully</span>";
                            } else {
                                echo "Error: " . $sql . "<br>" . $con->error;
                            }
@@ -87,7 +87,7 @@ else {
                        
                              move_uploaded_file($file_temp,$move_image);
                            
-                    echo "<span class='success-msg'>New record created successfully</span>";
+                    echo "<span class='success'>New record created successfully</span>";
                     } else {
                         echo "Error: " . $sql . "<br>" . $con->error;
                     }

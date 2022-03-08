@@ -10,7 +10,6 @@
         <div class="card-body">
           <form method="post" enctype="multipart/form-data">
              <?php
-
                   
                     if(isset($_POST['submit'])){
                         $category_id = $_POST['category_id'];
@@ -33,9 +32,9 @@
                         $move_image = "../image/".$unique_image;
                         
                         if (empty($short_description) ) {
-                            echo "<span class='error-msg'>Field Must Not be Empty</span>"; 
+                            echo "<span class='error'>Field Must Not be Empty</span>"; 
                         }elseif (empty($file_ext)) {
-                            echo "<span class='error-msg'>Image is required</span>";
+                            echo "<span class='error'>Image is required</span>";
                         }
 
                          else if ($file_size >1048567) {
@@ -53,7 +52,7 @@
                        
                              move_uploaded_file($file_temp,$move_image);
                            
-                    echo "<span class='success-msg'>New record created successfully</span>";
+                    echo "<span class='success'>New record created successfully</span>";
                     } else {
                         echo "Error: " . $sql . "<br>" . $con->error;
                     }
@@ -87,7 +86,7 @@
                         <div class="col-md-6">
                             <div class="form-floating">
                                 <input name="hours" class="form-control"  type="number"/>
-                                <label for="inputLastName">Hours</label>
+                                <label for="inputLastName">Minutes</label>
                             </div>
                         </div>
                     </div>
@@ -97,7 +96,7 @@
                             <div class="form-floating mb-3 mb-md-0">
                                
                                 <select class="form-control" name="category_id">
-                                    <option>-- Choose Fuel Type --</option>
+                                    <option>-- Choose category --</option>
                                     <?php
                                         $cat = "SELECT * FROM categories WHERE is_active=0";
                                         $catdata = $con->query($cat);
@@ -107,7 +106,7 @@
                                     <option value="<?php echo $catvalue['cat_id']?>"><?php echo $catvalue['cat_name']?></option>
                                     <?php }  ?>
                                 </select>
-                                <label for="inputFirstName">Fuel Type</label>
+                                <label for="inputFirstName">category</label>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -147,7 +146,7 @@
                      
                     <div class="mt-4 mb-0">
                         <div class="d-grid">
-                            <button class="btn btn-primary btn-block" type="submit" name="submit">Create Car</button>
+                            <button class="btn btn-primary btn-block" type="submit" name="submit">Create Course</button>
                         </div>
                     </div>
                 </form>

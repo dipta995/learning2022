@@ -12,6 +12,15 @@
                 </footer>
             </div>
         </div>
+        <style>
+            .error{
+                color: red;
+                font-size: 16px;
+            }.success{
+                color: green;
+                font-size: 16px;
+            }
+        </style>
         
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="js/scripts.js"></script>
