@@ -1,7 +1,7 @@
 <?php include 'header.php'; ?>
 <main>
 <div class="container-fluid px-4">
-    <h1 class="mt-4">Edit course <a class="btn btn-info" href="courses.php">Courses</a></h1>
+    <h1 class="mt-4"> courses <a class="btn btn-info" href="courses.php">Courses</a></h1>
     <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
         <li class="breadcrumb-item active">Cars</li>
@@ -164,7 +164,7 @@ else {
                     <div class="row mb-3">
                         <div class="col-md-12">
                             <div class="form-floating mb-3 mb-md-0">
-                                <textarea name="short_description" class="form-control" type="" > <?php echo $value['course_title']?> </textarea>
+                                <textarea name="short_description" class="form-control" type="" > <?php echo $value['short_description']?> </textarea>
                                 <label for="inputFirstName">Short Description</label>
                             </div>
                         </div>
@@ -173,7 +173,7 @@ else {
                     <div class="row mb-3">
                         <div class="col-md-12">
                             <div class="form-floating mb-3 mb-md-0">
-                                <textarea name="description" class="form-control" id="inputFirstName" type="" placeholder="description"><?php echo $value['course_title']?> </textarea>
+                                <textarea name="description" class="form-control" id="inputFirstName" type="" placeholder="description"><?php echo $value['description']?> </textarea>
                                 <label for="inputFirstName">Description</label>
                             </div>
                         </div>

@@ -27,165 +27,45 @@
                 </div><!-- end title -->
 
                 <div id="owl-01" class="owl-carousel owl-theme owl-theme-01">
+                    <?php
+                     $query = "SELECT * FROM courses left join categories on categories.cat_id=courses.category_id where courses.is_active=0  Order By course_id desc limit 6";
+                     $result = $con->query($query);
+                     if ($result->num_rows > 0) {
+                         foreach ($result as $key => $value) {
+                    ?>
                     <div class="caro-item">
                         <div class="course-box">
                             <div class="image-wrap entry">
-                                <img src="upload/course_01.jpg" alt="" class="img-responsive">
+                                <img style="width: 272px; height:250px;" src="<?php echo  $value['banner'];?>" alt="" class="img-responsive">
                                 <div class="magnifier">
                                      <a href="#" title=""><i class="flaticon-add"></i></a>
                                 </div>
                             </div><!-- end image-wrap -->
                             <div class="course-details">
                                 <h4>
-                                    <small>Javascript</small>
-                                    <a href="#" title="">Modern JavaScript Linting With ESLint</a>
+                                    <small><?php echo  $value['cat_name'];?></small>
+                                    <a href="#" title=""><?php echo  $value['course_title'];?></a>
                                 </h4>
-                                <p>Fusce interdum, elit sit amet vehicula malesuada, eros libero elementum orci.</p>
+                                <p><?php echo  $value['short_description'];?></p>
                             </div><!-- end details -->
                             <div class="course-footer clearfix">
                                 <div class="pull-left">
                                     <ul class="list-inline">
                                         <li><a href="#"><i class="fa fa-user"></i> 21</a></li>
-                                        <li><a href="#"><i class="fa fa-clock-o"></i> 15 Min.</a></li>
+                                        <li><a href="#"><i class="fa fa-clock-o"></i> <?php echo  $value['hours'];?> Min.</a></li>
                                     </ul>
                                 </div><!-- end left -->
 
                                 <div class="pull-right">
                                     <ul class="list-inline">
-                                        <li><a href="#">$22.00</a></li>
+                                        <li><a href="#">৳ <?php echo round( $value['price']-(($value['price']*$value['discount'])/100));?></a></li>
                                     </ul>
                                 </div><!-- end left -->
                             </div><!-- end footer -->
                         </div><!-- end box -->
                     </div><!-- end col -->
-
-                    <div class="caro-item">
-                        <div class="course-box">
-                            <div class="image-wrap entry">
-                                <img src="upload/course_02.jpg" alt="" class="img-responsive">
-                                <div class="magnifier">
-                                     <a href="#" title=""><i class="flaticon-add"></i></a>
-                                </div>
-                            </div><!-- end image-wrap -->
-                            <div class="course-details">
-                                <h4>
-                                    <small>Design</small>
-                                    <a href="#" title="">Designing Game UI Assets in Adobe Illustrator</a>
-                                </h4>
-                                <p>Curabitur condimentum velit non odio mattis tristique. Nam vitae orci aliquam. </p>
-                            </div><!-- end details -->
-                            <div class="course-footer clearfix">
-                                <div class="pull-left">
-                                    <ul class="list-inline">
-                                        <li><a href="#"><i class="fa fa-user"></i> 41</a></li>
-                                        <li><a href="#"><i class="fa fa-clock-o"></i> 33 Min.</a></li>
-                                    </ul>
-                                </div><!-- end left -->
-
-                                <div class="pull-right">
-                                    <ul class="list-inline">
-                                        <li><a href="#">$55.00</a></li>
-                                    </ul>
-                                </div><!-- end left -->
-                            </div><!-- end footer -->
-                        </div><!-- end box -->
-                    </div><!-- end col -->
-
-                    <div class="caro-item">
-                        <div class="course-box">
-                            <div class="image-wrap entry">
-                                <img src="upload/course_03.jpg" alt="" class="img-responsive">
-                                <div class="magnifier">
-                                     <a href="#" title=""><i class="flaticon-add"></i></a>
-                                </div>
-                            </div><!-- end image-wrap -->
-                            <div class="course-details">
-                                <h4>
-                                    <small>PHP Coding</small>
-                                    <a href="#" title="">How to Become a Web Developer: Learn PHP</a>
-                                </h4>
-                                <p>Donec auctor nec nibh sit amet pulvinar. Mauris nulla elit, lacinia ac facilisis mattis.</p>
-                            </div><!-- end details -->
-                            <div class="course-footer clearfix">
-                                <div class="pull-left">
-                                    <ul class="list-inline">
-                                        <li><a href="#"><i class="fa fa-user"></i> 35</a></li>
-                                        <li><a href="#"><i class="fa fa-clock-o"></i> 1 Hrs.</a></li>
-                                    </ul>
-                                </div><!-- end left -->
-
-                                <div class="pull-right">
-                                    <ul class="list-inline">
-                                        <li><a href="#">$51.00</a></li>
-                                    </ul>
-                                </div><!-- end left -->
-                            </div><!-- end footer -->
-                        </div><!-- end box -->
-                    </div><!-- end col -->
-
-                    <div class="caro-item">
-                        <div class="course-box">
-                            <div class="image-wrap entry">
-                                <img src="upload/course_04.jpg" alt="" class="img-responsive">
-                                <div class="magnifier">
-                                     <a href="#" title=""><i class="flaticon-add"></i></a>
-                                </div>
-                            </div><!-- end image-wrap -->
-                            <div class="course-details">
-                                <h4>
-                                    <small>PHP Coding</small>
-                                    <a href="#" title="">How to Build a Custom Theme for Drupal 8</a>
-                                </h4>
-                                <p>Pellentesque ut enim dictum, interdum lorem eget, vulputate eros sed felis euismod.</p>
-                            </div><!-- end details -->
-                            <div class="course-footer clearfix">
-                                <div class="pull-left">
-                                    <ul class="list-inline">
-                                        <li><a href="#"><i class="fa fa-user"></i> 35</a></li>
-                                        <li><a href="#"><i class="fa fa-clock-o"></i> 45 Min.</a></li>
-                                    </ul>
-                                </div><!-- end left -->
-
-                                <div class="pull-right">
-                                    <ul class="list-inline">
-                                        <li><a href="#">$51.00</a></li>
-                                    </ul>
-                                </div><!-- end left -->
-                            </div><!-- end footer -->
-                        </div><!-- end box -->
-                    </div><!-- end col -->
-
-                    <div class="caro-item">
-                        <div class="course-box">
-                            <div class="image-wrap entry">
-                                <img src="upload/course_01.jpg" alt="" class="img-responsive">
-                                <div class="magnifier">
-                                     <a href="#" title=""><i class="flaticon-add"></i></a>
-                                </div>
-                            </div><!-- end image-wrap -->
-                            <div class="course-details">
-                                <h4>
-                                    <small>Javascript</small>
-                                    <a href="#" title="">Modern JavaScript Linting With ESLint</a>
-                                </h4>
-                                <p>Fusce interdum, elit sit amet vehicula malesuada, eros libero elementum orci.</p>
-                            </div><!-- end details -->
-                            <div class="course-footer clearfix">
-                                <div class="pull-left">
-                                    <ul class="list-inline">
-                                        <li><a href="#"><i class="fa fa-user"></i> 21</a></li>
-                                        <li><a href="#"><i class="fa fa-clock-o"></i> 15 Min.</a></li>
-                                    </ul>
-                                </div><!-- end left -->
-
-                                <div class="pull-right">
-                                    <ul class="list-inline">
-                                        <li><a href="#">$22.00</a></li>
-                                    </ul>
-                                </div><!-- end left -->
-                            </div><!-- end footer -->
-                        </div><!-- end box -->
-                    </div><!-- end col -->
+                    <?php } }?>
+                  
                 </div><!-- end row -->
 
                 <hr class="invis">

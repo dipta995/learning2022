@@ -68,7 +68,7 @@ if ($result->num_rows > 0) {
     foreach ($result as $key => $value) {
 ?>
                             <tr>
-                                <td><?php echo $key; ?></td>
+                                <td><?php echo $key+1; ?></td>
                                 <td><?php echo $value['cat_name']; ?></td>
                                 <td>
                                     <a class="btn btn-info" href="?editid=<?php echo $value['cat_id']; ?>">Edit</a> 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 07, 2022 at 06:50 PM
+-- Generation Time: Mar 08, 2022 at 07:33 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -38,8 +38,8 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`cat_id`, `cat_name`, `is_active`) VALUES
-(2, 'cat one ', 0),
-(3, 'cat two', 0);
+(2, 'Design', 0),
+(3, 'Programming', 0);
 
 -- --------------------------------------------------------
 
@@ -68,7 +68,8 @@ CREATE TABLE `courses` (
 --
 
 INSERT INTO `courses` (`course_id`, `category_id`, `course_title`, `banner`, `short_description`, `description`, `price`, `discount`, `hours`, `total_hit`, `ratting`, `is_active`, `created_at`) VALUES
-(2, 2, 'course ione ', 'image/b480f755fb.png', ' course ione  ', 'course ione  ', '222', '22', '23', 0, 0, 0, '2022-03-07 17:18:11');
+(2, 2, 'course ione ', 'image/24b3d93fb9.jpg', 'Fusce interdum, elit sit amet vehicula malesuada, eros libero elementum orci.', 'Fusce interdum, elit sit amet vehicula malesuada, eros libero elementum orci.Fusce interdum, elit sit amet vehicula malesuada, eros libero elementum orci.Fusce interdum, elit sit amet vehicula malesuada, eros libero elementum orci.Fusce interdum, elit sit amet vehicula malesuada, eros libero elementum orci.Fusce interdum, elit sit amet vehicula malesuada, eros libero elementum orci.Fusce interdum, elit sit amet vehicula malesuada, eros libero elementum orci.', '222', '22', '23', 0, 0, 0, '2022-03-07 17:18:11'),
+(3, 3, 'Php', 'image/e7dc872afa.jpg', '  Fusce interdum, elit sit amet vehicula malesuada, eros libero elementum orci.  ', 'Fusce interdum, elit sit amet vehicula malesuada, eros libero elementum orci.  ', '3000', '5', '2', 0, 0, 0, '2022-03-08 18:14:24');
 
 -- --------------------------------------------------------
 
@@ -132,7 +133,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `courses`
 --
 ALTER TABLE `courses`
-  MODIFY `course_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `course_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `users`

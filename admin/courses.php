@@ -55,7 +55,7 @@
                                     <td><?php echo $value['course_id']; ?></td>
                                     <td><?php echo $value['course_title'] ?></td>
                                     <td><?php echo $value['price']; ?>Taka</td>
-                                    <td><?php echo $value['discount']; ?>Discount</td>
+                                    <td><?php echo $value['discount']; ?></td>
                                     <td><?php echo $value['hours']; ?> Hour</td>
                                     <td><img style="height:60px;width: 60px;" src="../<?php echo $value['banner']; ?>"></td>
 
