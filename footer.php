@@ -62,8 +62,8 @@
                         </div><!-- end widget -->
                     </div><!-- end col -->
                 </div><!-- end row -->
-            </div><!-- end container -->
-        </footer><!-- end footer -->
+            </div>
+        </footer>
 
         <div class="copyrights">
             <div class="container">
