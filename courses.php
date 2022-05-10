@@ -19,7 +19,7 @@
                      
                 
                     <?php
-                     $query = "SELECT * FROM courses left join categories on categories.cat_id=courses.category_id where courses.is_active=0  Order By course_id";
+                     $query = "SELECT * FROM courses left join categories on categories.cat_id=courses.category_id where courses.is_active=0  Order By course_id DESC";
                      $result = $con->query($query);
                      if ($result->num_rows > 0) { 
                          foreach ($result as  $value) {
@@ -29,13 +29,13 @@
                                 <div class="image-wrap entry">
                                 <img style="width: 333px; height:250px;" src="<?php echo  $value['banner'];?>" alt="" class="img-responsive">
                                     <div class="magnifier">
-                                         <a href="blog-single.html" title=""><i class="flaticon-add"></i></a>
+                                         <a href="single-course.php?courseid=<?php echo $value['course_id'] ?>" title=""><i class="flaticon-add"></i></a>
                                     </div>
                                 </div><!-- end image-wrap -->
                                 <div class="course-details">
                                     <h4>
                                         <small><?php echo  $value['cat_name'];?></small>
-                                        <a href="blog-single.html" title=""><?php echo  $value['course_title'];?></a>
+                                        <a href="single-course.php?courseid=<?php echo $value['course_id'] ?>" title=""><?php echo  $value['course_title'];?></a>
                                     </h4>
                                     <p><?php echo  $value['short_description'];?></p>
                                 </div><!-- end details -->

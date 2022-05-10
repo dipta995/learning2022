@@ -71,7 +71,7 @@
                 <hr class="invis">
 
                 <div class="section-button text-center">
-                    <a href="#" class="btn btn-primary">View All Courses</a>
+                    <a href="courses.php" class="btn btn-primary">View All Courses</a>
                 </div>
             </div><!-- end container -->
         </section>
