@@ -19,13 +19,13 @@ $catid = $value['category_id'];
                 <div class="row">
                     <div class="col-md-6">
                         <div class="tagline-message page-title">
-                            <h3>Single Shop</h3>
+                            <h3>Single Courses</h3>
                         </div>
                     </div><!-- end col -->
                     <div class="col-md-6 text-right">
                         <ul class="breadcrumb">
                             <li><a href="javascript:void(0)">Edulogy</a></li>
-                            <li class="active">Shop</li>
+                            <li class="active">Course</li>
                         </ul>
                     </div>
                 </div><!-- end row -->
@@ -59,7 +59,7 @@ $catid = $value['category_id'];
                                 <small><?php echo $value['price']; ?> Taka</small>
                                 <p><?php echo $value['short_description']; ?></p>
                                 <div class="shop-meta">
-                                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                                    <a href="order.php?courseid=<?php echo $value['course_id']; ?>" class="btn btn-primary">Enroll Now</a>
                                     <ul class="list-inline">
                                         <li> SKU: product-111</li>
                                         <li>Categories: <a href="#"><?php echo $value['cat_name']; ?></a>
@@ -147,23 +147,24 @@ $catid = $value['category_id'];
 
                         <div class="row blog-grid shop-grid">
                         <?php
-                     $sql = "SELECT * FROM courses left join categories on categories.cat_id=courses.category_id where courses.is_active=0 AND courses.category_id=$catid  Order By course_id desc limit 6";
-                     $getdata = $con->query($sql);
-                     if ($getdata->num_rows > 0) {
-                         foreach ($getdata as $key => $data) {
-                    ?>
+                            $sql = "SELECT * FROM courses left join categories on categories.cat_id = courses.category_id where courses.is_active = 0 
+                            AND courses.category_id = '$catid'  order by rand() limit 4";
+                            $getdata = $con->query($sql);
+                            if ($getdata->num_rows > 0) {
+                                foreach ($getdata as $key => $data) {
+                        ?>
                             <div class="col-md-3">
                                 <div class="course-box shop-wrapper">
                                     <div class="image-wrap entry">
                                         <img src="<?php echo  $data['banner'];?>" alt="" class="img-responsive">
                                         <div class="magnifier">
-                                            <a href="shop-single.html" title=""><i class="flaticon-add"></i></a>
+                                            <a href="single-course.php?courseid=<?php echo $value['course_id'] ?>" title=""><i class="flaticon-add"></i></a>
                                         </div>
                                     </div>
                                     <!-- end image-wrap -->
                                     <div class="course-details shop-box text-center">
                                         <h4>
-                                            <a href="shop-single.html" title=""><?php echo  $data['course_title'];?></a>
+                                            <a href="single-course.php?courseid=<?php echo $value['course_id'] ?>" title=""><?php echo  $data['course_title'];?></a>
                                             <small><?php echo  $data['cat_name'];?></small>
                                         </h4>
                                     </div>

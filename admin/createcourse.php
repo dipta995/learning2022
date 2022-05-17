@@ -1,10 +1,10 @@
 <?php include 'header.php'; ?>
 <main>
 <div class="container-fluid px-4">
-    <h1 class="mt-4">Create new Courses <a class="btn btn-info" href="courses.php">Courses</a></h1>
+    <h1 class="mt-4">Create New Courses <a class="btn btn-info" href="courses.php">Courses</a></h1>
     <ol class="breadcrumb mb-4">
-        <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-        <li class="breadcrumb-item active">Cars</li>
+        <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
+        <li class="breadcrumb-item active">Courses</li>
     </ol>
     <div class="card mb-4">
         <div class="card-body">
@@ -86,7 +86,7 @@
                         <div class="col-md-6">
                             <div class="form-floating">
                                 <input name="hours" class="form-control"  type="number"/>
-                                <label for="inputLastName">Minutes</label>
+                                <label for="inputLastName">Hours</label>
                             </div>
                         </div>
                     </div>
@@ -106,7 +106,7 @@
                                     <option value="<?php echo $catvalue['cat_id']?>"><?php echo $catvalue['cat_name']?></option>
                                     <?php }  ?>
                                 </select>
-                                <label for="inputFirstName">category</label>
+                                <label for="inputFirstName">Category</label>
                             </div>
                         </div>
                         <div class="col-md-6">

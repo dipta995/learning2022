@@ -16,10 +16,9 @@
             <div class="container">
                 <div class="boxed boxedp4">
                     <div class="row blog-grid">
-                     
-                
+                                    
                     <?php
-                     $query = "SELECT * FROM courses left join categories on categories.cat_id=courses.category_id where courses.is_active=0  Order By course_id DESC";
+                     $query = "SELECT * FROM courses left join categories on categories.cat_id = courses.category_id where courses.is_active = 0  Order By course_id DESC";
                      $result = $con->query($query);
                      if ($result->num_rows > 0) { 
                          foreach ($result as  $value) {
@@ -29,7 +28,7 @@
                                 <div class="image-wrap entry">
                                 <img style="width: 333px; height:250px;" src="<?php echo  $value['banner'];?>" alt="" class="img-responsive">
                                     <div class="magnifier">
-                                         <a href="single-course.php?courseid=<?php echo $value['course_id'] ?>" title=""><i class="flaticon-add"></i></a>
+                                         <a href="single-course.php?courseid=<?php echo $value['course_id']; ?>" title=""><i class="flaticon-add"></i></a>
                                     </div>
                                 </div><!-- end image-wrap -->
                                 <div class="course-details">

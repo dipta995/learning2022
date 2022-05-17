@@ -4,7 +4,7 @@
         <h1 class="mt-4">Courses List <a class="btn btn-info" href="createcourse.php">Create course</a></h1>
         <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
-            <li class="breadcrumb-item active">Cars</li>
+            <li class="breadcrumb-item active">Courses</li>
         </ol>
         <div class="card mb-4">
             <div class="card-body">
@@ -54,9 +54,9 @@
                                 <tr>
                                     <td><?php echo $value['course_id']; ?></td>
                                     <td><?php echo $value['course_title'] ?></td>
-                                    <td><?php echo $value['price']; ?>Taka</td>
+                                    <td><?php echo $value['price']; ?> BDT</td>
                                     <td><?php echo $value['discount']; ?></td>
-                                    <td><?php echo $value['hours']; ?> Hour</td>
+                                    <td><?php echo $value['hours']; ?> Hours</td>
                                     <td><img style="height:60px;width: 60px;" src="../<?php echo $value['banner']; ?>"></td>
 
                                     <td>

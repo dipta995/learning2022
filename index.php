@@ -38,13 +38,13 @@
                             <div class="image-wrap entry">
                                 <img style="width: 272px; height:250px;" src="<?php echo  $value['banner'];?>" alt="" class="img-responsive">
                                 <div class="magnifier">
-                                     <a href="#" title=""><i class="flaticon-add"></i></a>
+                                     <a href="single-course.php?courseid=<?php echo $value['course_id'] ?>" title=""><i class="flaticon-add"></i></a>
                                 </div>
                             </div><!-- end image-wrap -->
                             <div class="course-details">
                                 <h4>
                                     <small><?php echo  $value['cat_name'];?></small>
-                                    <a href="#" title=""><?php echo  $value['course_title'];?></a>
+                                    <a href="single-course.php?courseid=<?php echo $value['course_id'] ?>" title=""><?php echo  $value['course_title'];?></a>
                                 </h4>
                                 <p><?php echo  $value['short_description'];?></p>
                             </div><!-- end details -->
@@ -157,7 +157,7 @@
                     <div class="col-lg-4 col-md-4">
                         <div class="stat-count">
                             <h4 class="stat-timer">331</h4>
-                            <h3><i class="flaticon-online-course"></i> Course Done</h3>
+                            <h3><i class="flaticon-online-course"></i>Completed Courses</h3>
                             <p>Quisque porttitor eros quis leo pulvinar, at hendrerit sapien iaculis. </p>
                         </div><!-- stat-count -->
                     </div><!-- end col -->
@@ -165,7 +165,7 @@
                     <div class="col-lg-4 col-md-4">
                         <div class="stat-count">
                             <h4 class="stat-timer">8901</h4>
-                            <h3><i class="flaticon-coffee-cup"></i> Ordered Coffe's</h3>
+                            <h3><i class="flaticon-coffee-cup"></i> Ordered Courses</h3>
                             <p>Quisque porttitor eros quis leo pulvinar, at hendrerit sapien iaculis. </p>
                         </div><!-- stat-count -->
                     </div><!-- end col -->

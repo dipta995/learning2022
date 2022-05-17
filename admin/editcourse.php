@@ -3,8 +3,8 @@
 <div class="container-fluid px-4">
     <h1 class="mt-4"> courses <a class="btn btn-info" href="courses.php">Courses</a></h1>
     <ol class="breadcrumb mb-4">
-        <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-        <li class="breadcrumb-item active">Cars</li>
+        <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
+        <li class="breadcrumb-item active">Courses</li>
     </ol>
     <div class="card mb-4">
         <div class="card-body">
@@ -187,7 +187,7 @@ else {
                      
                     <div class="mt-4 mb-0">
                         <div class="d-grid">
-                            <button class="btn btn-primary btn-block" type="submit" name="submit">Create Car</button>
+                            <button class="btn btn-primary btn-block" type="submit" name="submit">Create Course</button>
                         </div>
                     </div>
                 </form>

@@ -111,13 +111,13 @@
                             <span class="icon-bar"></span>
                         </button>
                         <div class="logo-normal">
-                            <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt=""></a>
+                            <a class="navbar-brand" href="index.php"><img src="images/logo.png" alt=""></a>
                         </div>
                     </div>
 
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="index.html">Home</a></li>
+                            <li><a href="index.php">Home</a></li>
                             <li class="dropdown yamm-fw yamm-half"><a href="#" data-toggle="dropdown" class="dropdown-toggle active">Mega Menu <b class="fa fa-angle-down"></b></a>
                                 <ul class="dropdown-menu">
                                     <li>
