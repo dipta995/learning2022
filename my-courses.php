@@ -70,7 +70,7 @@ $user_id = $_SESSION['user_id'];
                                         ?>
                                         <a href="?delid=<?php echo $value['order_id']; ?>" class="btn btn-danger">Cancell</a>
                                         <?php }else{ ?>
-                                            <a href="palaylist.php?courseid=<?php echo $value['course_id']; ?>" class="btn btn-danger">Preview</a>
+                                            <a href="palaylist.php?courseid=<?php echo $value['course_id']; ?>&videoid=1" class="btn btn-danger">Preview</a>
                                             <?php } ?>
                                         <!-- <a target="_blank" href="../car-single.php?carid=" class="btn btn-success">Show Details</a> -->
                                     </td>

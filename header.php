@@ -51,11 +51,7 @@
 
     ?>
 
-    <!-- LOADER -->
-    <div id="preloader">
-        <img class="preloader" src="images/loader.gif" alt="">
-    </div><!-- end loader -->
-    <!-- END LOADER -->
+
 
     <div id="wrapper">
         <!-- BEGIN # MODAL LOGIN -->
