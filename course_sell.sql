@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 27, 2022 at 02:11 PM
+-- Generation Time: May 28, 2022 at 11:37 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -130,6 +130,27 @@ INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `phone`, `passwor
 (2, 'Mahjuba', 'Tasrin', 'mahjubatasrin420@gmail.com', '01920069653', 'mithshan777', 'admin', 0, '2022-03-18 09:41:54'),
 (3, 'Mithila', 'Rabbany', 'mithilarabbany12@gmail.com', '01717576087', '12345678', 'user', 0, '2022-05-27 11:03:24');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `videos`
+--
+
+CREATE TABLE `videos` (
+  `video_id` int(11) NOT NULL,
+  `video_title` varchar(255) NOT NULL,
+  `video_url` varchar(255) NOT NULL,
+  `course_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `videos`
+--
+
+INSERT INTO `videos` (`video_id`, `video_title`, `video_url`, `course_id`) VALUES
+(1, 'test one', 'video1.mp4', 6),
+(2, 'test two', 'video2.mp4', 6);
+
 --
 -- Indexes for dumped tables
 --
@@ -160,6 +181,12 @@ ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `videos`
+--
+ALTER TABLE `videos`
+  ADD PRIMARY KEY (`video_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -186,6 +213,12 @@ ALTER TABLE `orders`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `videos`
+--
+ALTER TABLE `videos`
+  MODIFY `video_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints for dumped tables
