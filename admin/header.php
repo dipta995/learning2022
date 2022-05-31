@@ -5,8 +5,7 @@
  
 session_start();
 if($_SESSION['role'] !="admin" ){
- 
-     header('Location:../auth.php');
+    header('Location:../auth.php');
 }elseif ($_SESSION['role']==Null ) {
     header('Location:../auth.php');
 }
@@ -71,7 +70,7 @@ echo "<script>window.location='../auth.php';</script>";
                             <div class="sb-sidenav-menu-heading">Interface</div>
                             <a class="nav-link" href="category.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                              Category
+                                Categories
                             </a>
                          
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
@@ -81,8 +80,8 @@ echo "<script>window.location='../auth.php';</script>";
                             </a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="courses.php">Courses</a>
-                                    <a class="nav-link" href="course-video.php">Add videos</a>
+                                    <a class="nav-link" href="courses.php">Course List</a>
+                                    <a class="nav-link" href="course-video.php">Create New Course</a>
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
@@ -122,7 +121,6 @@ echo "<script>window.location='../auth.php';</script>";
                                         <nav class="sb-sidenav-menu-nested nav">
                                             <a class="nav-link" href="401.html">401 Page</a>
                                             <a class="nav-link" href="404.html">404 Page</a>
-                                            <a class="nav-link" href="500.html">500 Page</a>
                                         </nav>
                                     </div>
                                 </nav>

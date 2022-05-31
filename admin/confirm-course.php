@@ -4,7 +4,7 @@
     
         <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
-            <li class="breadcrumb-item active">confirm Courses</li>
+            <li class="breadcrumb-item active">Confirmed Courses</li>
         </ol>
         <div class="card mb-4">
             <div class="card-body">
@@ -13,24 +13,24 @@
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Coursr Name</th>
-                            <th>payable amount</th>
+                            <th>Course Name</th>
+                            <th>Payable Amount</th>
                             <th>Student Name</th>
-                            <th>Phone</th>
-                            <th>Payment acount</th>
-                            <th>ref</th>
+                            <th>Phone No.</th>
+                            <th>Payment Account</th>
+                            <th>Ref</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
                             <th>#</th>
-                            <th>Coursr Name</th>
-                            <th>payable amount</th>
+                            <th>Course Name</th>
+                            <th>Payable Amount</th>
                             <th>Student Name</th>
-                            <th>Phone</th>
-                            <th>Payment acount</th>
-                            <th>ref</th>
+                            <th>Phone No.</th>
+                            <th>Payment Account</th>
+                            <th>Ref</th>
                             <th>Action</th>
                         </tr>
                     </tfoot>

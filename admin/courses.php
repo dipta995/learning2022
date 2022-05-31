@@ -1,7 +1,7 @@
 <?php include 'header.php'; ?>
 <main>
     <div class="container-fluid px-4">
-        <h1 class="mt-4">Courses List <a class="btn btn-info" href="createcourse.php">Create course</a></h1>
+        <h1 class="mt-4">Course List <a class="btn btn-info" href="createcourse.php">Create Course</a></h1>
         <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
             <li class="breadcrumb-item active">Courses</li>
@@ -12,13 +12,13 @@
                 <table id="datatablesSimple">
                     <thead>
                         <tr>
-                            <th>#</th>
-                            <th>Title</th>
-                            <th>Price</th>
-                            <th>Discount</th>
-                            <th>Hours</th>
-                            <th>Image</th>
-                            <th>Action</th>
+                            <th width="5%">#</th>
+                            <th width="15%">Title</th>
+                            <th width="10%">Price</th>
+                            <th width="10%">Discount</th>
+                            <th width="10%">Hours</th>
+                            <th width="15%">Image</th>
+                            <th width="35%">Action</th>
                         </tr>
                     </thead>
                     <tfoot>
@@ -61,6 +61,8 @@
 
                                     <td>
                                         <a href="editcourse.php?editid=<?php echo $value['course_id']; ?>" class="btn btn-info">Edit</a>
+                                        <a href="addvideo.php?vidid=<?php echo $value['course_id']; ?>" class="btn btn-info">Add Video</a>
+                                        <a href="videolist.php?listid=<?php echo $value['course_id']; ?>" class="btn btn-info">All Video</a>
                                         <a href="?delid=<?php echo $value['course_id']; ?>" class="btn btn-danger">Delete</a>
                                         <!-- <a target="_blank" href="../car-single.php?carid=" class="btn btn-success">Show Details</a> -->
                                     </td>

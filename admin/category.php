@@ -38,7 +38,7 @@ if (isset($_POST['create'])) {
 <main>
 
     <div class="container-fluid px-4">
-    <h1 class="mt-4">Categories<a class="btn btn-info" href="createcar.php">Create Category</a></h1>
+    <h1 class="mt-4">Create Category <a class="btn btn-info" href="createcar.php">Categories</a></h1>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
                             <li class="breadcrumb-item active">categories</li>
@@ -85,7 +85,7 @@ if ($result->num_rows > 0) {
                 </div>
             </div>
             <div class="card-body col-md-4">
-                <p cla ss="mt-4">create new Category</p>
+                <p cla ss="mt-4">Create New Category</p>
                 <?php
                 
                 if (isset($_GET['editid']) && !empty($_GET['editid'])) {
@@ -99,7 +99,7 @@ if ($result->num_rows > 0) {
             <form method="post" action="">
                 <div class="form-floating">
                     <input class="form-control"  type="text" value="<?php echo $catvalue['cat_name']; ?>" name="cat_name" />
-                    <label for="inputEmail">Category name</label>
+                    <label for="inputEmail">Category Name</label>
                 </div>
                 <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
                     <button class="btn btn-primary" type="submit" name="edit">Create</button>
@@ -109,7 +109,7 @@ if ($result->num_rows > 0) {
                 <form method="post" action="">
                 <div class="form-floating">
                     <input class="form-control" id="inputEmail" type="text" placeholder="" name="cat_name" />
-                    <label for="inputEmail">Category name</label>
+                    <label for="inputEmail">Category Name</label>
                 </div>
                 <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
                     <button class="btn btn-primary" type="submit" name="create">Create</button>

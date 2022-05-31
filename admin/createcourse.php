@@ -1,7 +1,7 @@
 <?php include 'header.php'; ?>
 <main>
 <div class="container-fluid px-4">
-    <h1 class="mt-4">Create New Courses <a class="btn btn-info" href="courses.php">Courses</a></h1>
+    <h1 class="mt-4">Create New Course <a class="btn btn-info" href="courses.php">Courses</a></h1>
     <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
         <li class="breadcrumb-item active">Courses</li>
@@ -52,7 +52,7 @@
                        
                              move_uploaded_file($file_temp,$move_image);
                            
-                    echo "<span class='success'>New record created successfully</span>";
+                    echo "<span class='success'>New Record Created Successfully!</span>";
                     } else {
                         echo "Error: " . $sql . "<br>" . $con->error;
                     }

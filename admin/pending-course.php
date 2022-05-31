@@ -13,26 +13,25 @@
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Coursr Name</th>
-                            <th>payable amount</th>
+                            <th>Course Name</th>
+                            <th>Payable Amount</th>
                             <th>Student Name</th>
-                            <th>Phone</th>
-                            <th>Payment acount</th>
-                            <th>ref</th>
+                            <th>Phone No.</th>
+                            <th>Payment Account</th>
+                            <th>Ref</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
                             <th>#</th>
-                            <th>Coursr Name</th>
-                            <th>payable amount</th>
+                            <th>Course Name</th>
+                            <th>Payable Amount</th>
                             <th>Student Name</th>
-                            <th>Phone</th>
-                            <th>Payment acount</th>
-                            <th>ref</th>
+                            <th>Phone No.</th>
+                            <th>Payment Account</th>
+                            <th>Ref</th>
                             <th>Action</th>
-                            </tr>
                     </tfoot>
                     <tbody>
                         <?php
@@ -77,7 +76,7 @@
                                     <td><?php echo $value['ref'] ?></td>
                                     <td>
                                         <a href="?confirmid=<?php echo $value['order_id']; ?>" class="btn btn-info">Confirm now</a>
-                                        <a href="?delid=<?php echo $value['order_id']; ?>" class="btn btn-danger">Cancell</a>
+                                        <a href="?delid=<?php echo $value['order_id']; ?>" class="btn btn-danger">Cancel</a>
                                         <!-- <a target="_blank" href="../car-single.php?carid=" class="btn btn-success">Show Details</a> -->
                                     </td>
                                 </tr>
