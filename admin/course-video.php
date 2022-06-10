@@ -54,7 +54,7 @@
                             <div class="form-floating mb-3 mb-md-0">
                                 <select name="course_id" class="form-control">
                                     <?php
-                                $query = "SELECT * FROM courses where is_active=0 Order By course_id desc";
+                                $query = "SELECT * FROM courses where is_active = 0 Order By course_id desc";
                                 $result = $con->query($query);
                                 if ($result->num_rows > 0) {
                                     foreach ($result as $key => $value) {
@@ -76,7 +76,7 @@
                      <div class="row mb-3">
                         <div class="col-md-6">
                             <div class="form-floating mb-3 mb-md-0">
-                                <input name="video_title" required  class="form-control" id="inputFirstName" type="text" />
+                                <input name="video_title" required  class="form-control" id="inputFirstName" type="text"/>
                                 <label for="inputFirstName">Title</label>
                             </div>
                         </div>

@@ -65,6 +65,32 @@
                     <div class="row mb-3">
                         <div class="col-md-6">
                             <div class="form-floating mb-3 mb-md-0">
+                               
+                                <select class="form-control" name="category_id">
+                                    <option>-- Choose category --</option>
+                                    <?php
+                                        $cat = "SELECT * FROM categories WHERE is_active=0";
+                                        $catdata = $con->query($cat);
+                                        foreach ($catdata as $key => $catvalue) {
+
+                                    ?>
+                                    <option value="<?php echo $catvalue['cat_id']?>"><?php echo $catvalue['cat_name']?></option>
+                                    <?php }  ?>
+                                </select>
+                                <label for="inputFirstName">Category</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating mb-3 mb-md-0">
+                                <input name="image" class="form-control" type="file" placeholder="Enter your last name" />
+                                <label for="inputFirstName">Image</label>
+                            </div>
+                        </div>                    
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <div class="form-floating mb-3 mb-md-0">
                                 <input required class="form-control"  type="text" name="course_title" />
                                 <label for="inputFirstName">Course Title</label>
                             </div>
@@ -90,36 +116,7 @@
                             </div>
                         </div>
                     </div>
-
-                     <div class="row mb-3">
-                        <div class="col-md-6">
-                            <div class="form-floating mb-3 mb-md-0">
-                               
-                                <select class="form-control" name="category_id">
-                                    <option>-- Choose category --</option>
-                                    <?php
-                                        $cat = "SELECT * FROM categories WHERE is_active=0";
-                                        $catdata = $con->query($cat);
-                                        foreach ($catdata as $key => $catvalue) {
-
-                                    ?>
-                                    <option value="<?php echo $catvalue['cat_id']?>"><?php echo $catvalue['cat_name']?></option>
-                                    <?php }  ?>
-                                </select>
-                                <label for="inputFirstName">Category</label>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-floating mb-3 mb-md-0">
-                                <input name="image" class="form-control" type="file" placeholder="Enter your last name" />
-                                <label for="inputFirstName">Image</label>
-                            </div>
-                        </div>
-                       
-                    </div>
-
             
-
                     <div class="row mb-3">
                         <div class="col-md-12">
                             <div class="form-floating mb-3 mb-md-0">
@@ -138,12 +135,7 @@
                         </div>
                       
                     </div>
-                      
-            
-                  
-                     
-
-                     
+       
                     <div class="mt-4 mb-0">
                         <div class="d-grid">
                             <button class="btn btn-primary btn-block" type="submit" name="submit">Create Course</button>

@@ -16,12 +16,34 @@
             <div class="container">
                 <div class="boxed boxedp4">
                     <div class="row blog-grid">
-                                    
+                        <?php
+                    if (isset($_GET['pageno'])) {
+            $pageno = $_GET['pageno'];
+        } else {
+            $pageno = 1;
+        }
+        $no_of_records_per_page = 12;
+        $offset = ($pageno-1) * $no_of_records_per_page;
+
+       
+        // Check connection
+        if (mysqli_connect_errno()){
+            echo "Failed to connect to MySQL: " . mysqli_connect_error();
+            die();
+        }   
+        $total_pages_sql = "SELECT COUNT(*) FROM courses left join categories on categories.cat_id = courses.category_id where courses.is_active = 0  Order By course_id DESC"; 
+        $result = mysqli_query($con,$total_pages_sql);
+        $total_rows = mysqli_fetch_array($result)[0];
+
+        $total_pages = ceil($total_rows / $no_of_records_per_page);
+        $sqls = "SELECT * FROM courses left join categories on categories.cat_id = courses.category_id where courses.is_active = 0 LIMIT $offset, $no_of_records_per_page";
+        
+        ?>          
                     <?php
-                     $query = "SELECT * FROM courses left join categories on categories.cat_id = courses.category_id where courses.is_active = 0  Order By course_id DESC";
-                     $result = $con->query($query);
-                     if ($result->num_rows > 0) { 
-                         foreach ($result as  $value) {
+
+                     $res_data = mysqli_query($con,$sqls);
+                        if ($res_data->num_rows > 0) {
+                            foreach ($res_data as $key => $value) {
                     ?>
                         <div class="col-md-4">
                             <div class="course-box">
@@ -62,14 +84,22 @@
 
                     <div class="row">
                         <div class="col-md-12 text-center">
-                            <ul class="pagination ">
-                                <li class="disabled"><a href="javascript:void(0)">&laquo;</a></li>
-                                <li class="active"><a href="javascript:void(0)">1</a></li>
-                                <li><a href="javascript:void(0)">2</a></li>
-                                <li><a href="javascript:void(0)">3</a></li>
-                                <li><a href="javascript:void(0)">...</a></li>
-                                <li><a href="javascript:void(0)">&raquo;</a></li>
-                            </ul>
+                            <div class="pagination ">
+
+                           
+                        <ul>
+                  <li><a href="?pageno=1">&lt;</a></li>
+                  <li class="">
+                    <?php
+                    for ($i=1; $i <= $total_pages ; $i++) { ?>
+                      <li><a href="?pageno=<?php echo $i; ?>"><?php echo $i; ?></a></li>
+                  <?php  }
+                    ?>
+                      <a href=""></a>
+                  </li>
+                  <li><a href="?pageno=<?php echo $total_pages; ?>">&gt;</a></li>
+              </ul>
+              </div>
                         </div><!-- end col -->
                     </div><!-- end row -->
                 </div><!-- end boxed -->

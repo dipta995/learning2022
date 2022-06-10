@@ -11,7 +11,7 @@
         <form method="post" enctype="multipart/form-data">
 <?php
  if (empty($_GET['editid']) || $_GET['editid']==NULL|| !isset($_GET['editid'])) {
-    echo "<script>window.location='cars.php';</script>";
+    echo "<script>window.location='Courses.php';</script>";
 }
 else {
     $editid=$_GET['editid'];
@@ -34,25 +34,26 @@ else {
         $file_name = $_FILES['image']['name'];
         $file_size = $_FILES['image']['size'];
         $file_temp = $_FILES['image']['tmp_name'];
+
         $div            = explode('.', $file_name);
         $file_ext       = strtolower(end($div));
         $unique_image   = substr(md5(time()), 0, 10).'.'.$file_ext;
         $uploaded_image = "image/".$unique_image;
-        $move_image = "../image/".$unique_image;
+        $move_image     = "../image/".$unique_image;
         
         if (empty($short_description) ) {
             echo "<span class='error'>Field Must Not be Empty</span>"; 
         }elseif (empty($file_ext)) {
             $sql = "UPDATE courses  
             SET
-            course_title       = '$course_title',
-            category_id      = '$category_id',
-            price       = '$price',
-            discount       = '$discount',
-            hours       = '$hours',
-            short_description = '$short_description',
-            description    ='$description'
-            WHERE course_id=$editid";
+            course_title        = '$course_title',
+            category_id         = '$category_id',
+            price               = '$price',
+            discount            = '$discount',
+            hours               = '$hours',
+            short_description   = '$short_description',
+            description         = '$description'
+            WHERE course_id     =  $editid";
 
             if ($con->query($sql) === TRUE) {
                 
@@ -72,19 +73,19 @@ else {
         }else{
         $sql = "UPDATE courses  
         SET
-        course_title       = '$course_title',
-        category_id      = '$category_id',
-        price       = '$price',
-        discount       = '$discount',
-        hours       = '$hours',
-        short_description = '$short_description',
-        description    ='$description',
-        banner    ='$uploaded_image'
-        WHERE course_id=$editid";
+        course_title        = '$course_title',
+        category_id         = '$category_id',
+        price               = '$price',
+        discount            = '$discount',
+        hours               = '$hours',
+        short_description   = '$short_description',
+        description         = '$description',
+        banner              = '$uploaded_image'
+        WHERE course_id     =  $editid";
 
         if ($con->query($sql) === TRUE) {
             move_uploaded_file($file_temp,$move_image);
-            echo "<span class='success'>New record created successfully</span>";
+            echo "<span class='success'>Updated successfully!</span>";
         } else {
             echo "Error: " . $sql . "<br>" . $con->error;
         }        
@@ -128,7 +129,7 @@ else {
             <div class="form-floating mb-3 mb-md-0">
                 
                 <select class="form-control" name="category_id">
-                    <option>-- Choose Fuel Type --</option>
+                    <option>-- Choose Category --</option>
                     <?php
                         $cat = "SELECT * FROM categories WHERE is_active=0";
                         $catdata = $con->query($cat);
@@ -139,7 +140,7 @@ else {
                         value="<?php echo $catvalue['cat_id']?>"><?php echo $catvalue['cat_name']?></option>
                     <?php }  ?>
                 </select>
-                <label for="inputFirstName">Fuel Type</label>
+                <label for="inputFirstName">Select Category</label>
             </div>
         </div>
         <div class="col-md-6">
@@ -176,7 +177,7 @@ else {
         
         <div class="mt-4 mb-0">
             <div class="d-grid">
-                <button class="btn btn-primary btn-block" type="submit" name="submit">Create Course</button>
+                <button class="btn btn-primary btn-block" type="submit" name="submit">Update Course</button>
             </div>
         </div>
     </form>

@@ -13,7 +13,7 @@
                     <thead>
                         <tr>
                             <th width="5%">#</th>
-                            <th width="15%">Title</th>
+                            <th width="15%">Course Title</th>
                             <th width="10%">Price</th>
                             <th width="10%">Discount</th>
                             <th width="10%">Hours</th>
@@ -24,7 +24,7 @@
                     <tfoot>
                         <tr>
                             <th>#</th>
-                            <th>Title</th>
+                            <th>Course Title</th>
                             <th>Price</th>
                             <th>Discount</th>
                             <th>Hours</th>
@@ -51,22 +51,21 @@
                             foreach ($result as $key => $value) {
 
                         ?>
-                                <tr>
-                                    <td><?php echo $value['course_id']; ?></td>
-                                    <td><?php echo $value['course_title'] ?></td>
-                                    <td><?php echo $value['price']; ?> BDT</td>
-                                    <td><?php echo $value['discount']; ?></td>
-                                    <td><?php echo $value['hours']; ?> Hours</td>
-                                    <td><img style="height:60px;width: 60px;" src="../<?php echo $value['banner']; ?>"></td>
+                        <tr>
+                            <td><?php echo $value['course_id']; ?></td>
+                            <td><?php echo $value['course_title'] ?></td>
+                            <td><?php echo $value['price']; ?> BDT</td>
+                            <td><?php echo $value['discount']; ?></td>
+                            <td><?php echo $value['hours']; ?> Hours</td>
+                            <td><img style="height:60px; width: 60px;" src="../<?php echo $value['banner']; ?>"></td>
 
-                                    <td>
-                                        <a href="editcourse.php?editid=<?php echo $value['course_id']; ?>" class="btn btn-info">Edit</a>
-                                        <a href="addvideo.php?vidid=<?php echo $value['course_id']; ?>" class="btn btn-info">Add Video</a>
-                                        <a href="videolist.php?listid=<?php echo $value['course_id']; ?>" class="btn btn-info">All Video</a>
-                                        <a href="?delid=<?php echo $value['course_id']; ?>" class="btn btn-danger">Delete</a>
-                                        <!-- <a target="_blank" href="../car-single.php?carid=" class="btn btn-success">Show Details</a> -->
-                                    </td>
-                                </tr>
+                            <td>
+                                <a href="editcourse.php?editid=<?php echo $value['course_id']; ?>" class="btn btn-info">Edit</a>
+                                <a href="addvideo.php?addid=<?php echo $value['course_id']; ?>" class="btn btn-success">Add Video</a>
+                                <a href="video-single.php?vidid=<?php echo $value['course_id']; ?>" class="btn btn-success">All Video</a>
+                                <a onclick="return confirm('Are you sure to Delete?');" href="?delid=<?php echo $value['course_id']; ?>" class="btn btn-danger">Delete</a>
+                            </td>
+                        </tr>
                         <?php }
                         } ?>
 

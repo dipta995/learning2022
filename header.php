@@ -23,8 +23,8 @@
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700,900" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,400i,700,700i" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700,900" rel="stylesheet"> -->
+    <!-- <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,400i,700,700i" rel="stylesheet"> -->
 
     <!-- Custom & Default Styles -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
