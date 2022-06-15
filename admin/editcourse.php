@@ -40,10 +40,20 @@ else {
         $unique_image   = substr(md5(time()), 0, 10).'.'.$file_ext;
         $uploaded_image = "image/".$unique_image;
         $move_image     = "../image/".$unique_image;
-        
+
+        $file_name1 = $_FILES['video']['name'];
+        $file_size1 = $_FILES['video']['size'];
+        $file_temp1 = $_FILES['video']['tmp_name'];
+
+        $div1            = explode('.', $file_name1);
+        $file_ext1       = strtolower(end($div1));
+        $unique_video   = substr(md5(time()), 0, 10).'.'.$file_ext1;
+        $uploaded_video = "video/".$unique_video;
+        $move_video = "../video/".$unique_video;    
+
         if (empty($short_description) ) {
             echo "<span class='error'>Field Must Not be Empty</span>"; 
-        }elseif (empty($file_ext)) {
+        }elseif (empty($file_ext) && empty($file_ext1)) {
             $sql = "UPDATE courses  
             SET
             course_title        = '$course_title',
@@ -66,29 +76,71 @@ else {
 
         }
 
-        else if ($file_size >1048567) {
-        echo "<span class='error'>Image Size should be less then 1MB! </span>";
-        } elseif (in_array($file_ext, $permited) === false) {
-        echo "<span class='error'>You can upload only:-".implode(', ', $permited)."</span>";
-        }else{
-        $sql = "UPDATE courses  
-        SET
-        course_title        = '$course_title',
-        category_id         = '$category_id',
-        price               = '$price',
-        discount            = '$discount',
-        hours               = '$hours',
-        short_description   = '$short_description',
-        description         = '$description',
-        banner              = '$uploaded_image'
-        WHERE course_id     =  $editid";
+        elseif (!empty($file_ext) && empty($file_ext1)) {
+            $sql = "UPDATE courses  
+            SET
+            course_title        = '$course_title',
+            category_id         = '$category_id',
+            price               = '$price',
+            discount            = '$discount',
+            hours               = '$hours',
+            short_description   = '$short_description',
+            description         = '$description',
+            banner              = '$uploaded_image'
+            WHERE course_id     =  $editid";
+    
+            if ($con->query($sql) === TRUE) {
+                move_uploaded_file($file_temp,$move_image);
+                echo "<span class='success'>Updated successfully!</span>";
+            } else {
+                echo "Error: " . $sql . "<br>" . $con->error;
+            }        
+        }
 
-        if ($con->query($sql) === TRUE) {
-            move_uploaded_file($file_temp,$move_image);
-            echo "<span class='success'>Updated successfully!</span>";
-        } else {
-            echo "Error: " . $sql . "<br>" . $con->error;
-        }        
+        elseif (empty($file_ext) && !empty($file_ext1)) {
+            $sql = "UPDATE courses  
+            SET
+            course_title        = '$course_title',
+            category_id         = '$category_id',
+            price               = '$price',
+            discount            = '$discount',
+            hours               = '$hours',
+            short_description   = '$short_description',
+            description         = '$description',
+            demo_video              = '$uploaded_video'
+            WHERE course_id     =  $editid";
+    
+            if ($con->query($sql) === TRUE) {
+                move_uploaded_file($file_temp1,$move_video);
+                echo "<span class='success'>Updated successfully!</span>";
+            } else {
+                echo "Error: " . $sql . "<br>" . $con->error;
+            }        
+        }
+
+
+        else{
+            $sql = "UPDATE courses  
+            SET
+            course_title        = '$course_title',
+            category_id         = '$category_id',
+            price               = '$price',
+            discount            = '$discount',
+            hours               = '$hours',
+            short_description   = '$short_description',
+            description         = '$description',
+            banner              = '$uploaded_image',
+            demo_video              = '$uploaded_video'
+            WHERE course_id     =  $editid";
+    
+            if ($con->query($sql) === TRUE) {
+                move_uploaded_file($file_temp,$move_image);
+                move_uploaded_file($file_temp1,$move_video);
+                echo "<span class='success'>Updated successfully!</span>";
+            } else {
+                echo "Error: " . $sql . "<br>" . $con->error;
+            }        
+        
     
     }
         
@@ -145,11 +197,23 @@ else {
         </div>
         <div class="col-md-6">
             <div class="form-floating mb-3 mb-md-0">
-                <input name="image" class="form-control" type="file" placeholder="Enter your last name" />
+                <input name="image" class="form-control" type="file" accept="image/*" placeholder="Enter your last name" />
                 <label for="inputFirstName">Image</label>
                 <div>
                     <img src="../<?php echo $value['banner']; ?>" style="height: 100px;" alt="">
                 </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-floating mb-3 mb-md-0">
+                <input name="video" class="form-control" type="file" accept="video/*" placeholder="Enter your last name" />
+                <label for="inputFirstName">Video</label>
+                <div>
+                <video width="300" height="250" controls>
+                        <source src="../<?php echo $value['demo_video'];?>"  type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+            </div>
             </div>
         </div>
         

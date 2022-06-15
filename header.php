@@ -1,13 +1,10 @@
-<!doctype html>
-
-<html class="no-js " lang="en">
-
-
-<head>
-
-    <!-- Basic -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
 
     <!-- Mobile Meta -->
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -75,27 +72,7 @@
         <!-- END # MODAL LOGIN -->
 
         <header class="header">
-            <div class="topbar clearfix">
-                <div class="container">
-                    <div class="row-fluid">
-                        <div class="col-md-6 col-sm-6 text-left">
-                            <p>
-                                <strong><i class="fa fa-phone"></i></strong> +90 543 123 45 67 &nbsp;&nbsp;
-                                <strong><i class="fa fa-envelope"></i></strong> <a href="mailto:#">info@yoursite.com</a>
-                            </p>
-                        </div><!-- end left -->
-                        <div class="col-md-6 col-sm-6 hidden-xs text-right">
-                            <div class="social">
-                                <a class="facebook" href="#" data-tooltip="tooltip" data-placement="bottom" title="Facebook"><i class="fa fa-facebook"></i></a>
-                                <a class="twitter" href="#" data-tooltip="tooltip" data-placement="bottom" title="Twitter"><i class="fa fa-twitter"></i></a>
-                                <a class="google" href="#" data-tooltip="tooltip" data-placement="bottom" title="Google Plus"><i class="fa fa-google-plus"></i></a>
-                                <a class="linkedin" href="#" data-tooltip="tooltip" data-placement="bottom" title="Linkedin"><i class="fa fa-linkedin"></i></a>
-                                <a class="pinterest" href="#" data-tooltip="tooltip" data-placement="bottom" title="Pinterest"><i class="fa fa-pinterest"></i></a>
-                            </div><!-- end social -->
-                        </div><!-- end left -->
-                    </div><!-- end row -->
-                </div><!-- end container -->
-            </div><!-- end topbar -->
+           
 
             <div class="container">
                 <nav class="navbar navbar-default yamm">

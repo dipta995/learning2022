@@ -5,7 +5,9 @@ if (isset($_GET['courseid'])) {
 }else{
     header ('Location:index.php');
 }
-
+$orderque = "SELECT * FROM orders where course_id = $courseid";
+$resultdata = $con->query($orderque);
+ $enroll_count = $resultdata->num_rows;
 $query = "SELECT * FROM courses LEFT JOIN categories ON categories.cat_id = courses.category_id WHERE course_id = $courseid";
 $result = $con->query($query);
 $value = mysqli_fetch_array($result);
@@ -40,7 +42,16 @@ $catid = $value['category_id'];
                             <div class="row">
                                 <div class="col-md-12">
                                 <div class="image-wrap entry">
-                                    <img src="<?php echo  $value['banner'];?>" alt="" class="img-responsive">
+                                <div onclick="this.nextElementSibling.style.display='block'; this.style.display='none'">
+   <img src="<?php echo  $value['banner'];?>" style="cursor:pointer" />
+</div>
+<div style="display:none">
+<video width="550" height="350" controls>
+                        <source src="<?php echo $value['demo_video']; ?>" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+</div>
+                                    <!-- <img src="<?php echo  $value['banner'];?>" alt="" class="img-responsive"> -->
                                  
                                 </div><!-- end image-wrap -->
                                 </div>
@@ -61,7 +72,7 @@ $catid = $value['category_id'];
                                 <div class="shop-meta">
                                     <a href="order.php?courseid=<?php echo $value['course_id']; ?>" class="btn btn-primary">Enroll Now</a>
                                     <ul class="list-inline">
-                                        <li> SKU: product-111</li>
+                                        <li> Total Enrolled: <?php echo $enroll_count ?></li>
                                         <li>Categories: <a href="#"><?php echo $value['cat_name']; ?></a>
                                     </ul>
                                 </div><!-- end shop meta -->

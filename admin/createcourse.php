@@ -29,7 +29,19 @@
                         $file_ext       = strtolower(end($div));
                         $unique_image   = substr(md5(time()), 0, 10).'.'.$file_ext;
                         $uploaded_image = "image/".$unique_image;
-                        $move_image = "../image/".$unique_image;
+                        $move_image = "../image/".$unique_image;    
+
+
+                    
+                        $file_name1 = $_FILES['video']['name'];
+                        $file_size1 = $_FILES['video']['size'];
+                        $file_temp1 = $_FILES['video']['tmp_name'];
+
+                        $div1            = explode('.', $file_name1);
+                        $file_ext1       = strtolower(end($div1));
+                        $unique_video   = substr(md5(time()), 0, 10).'.'.$file_ext1;
+                        $uploaded_video = "video/".$unique_video;
+                        $move_video = "../video/".$unique_video;    
                         
                         if (empty($short_description) ) {
                             echo "<span class='error'>Field Must Not be Empty</span>"; 
@@ -45,12 +57,13 @@
                         else{
                             
                              
-                            $sql = "INSERT INTO courses (course_title,category_id,price,discount,hours,short_description,description,banner)
-                    VALUES ('$course_title','$category_id','$price','$discount','$hours','$short_description','$description','$uploaded_image')";
+                            $sql = "INSERT INTO courses (course_title,category_id,price,discount,hours,short_description,description,banner,demo_video)
+                    VALUES ('$course_title','$category_id','$price','$discount','$hours','$short_description','$description','$uploaded_image','$demo_video')";
 
                     if ($con->query($sql) === TRUE) {
                        
                              move_uploaded_file($file_temp,$move_image);
+                             move_uploaded_file($file_temp1,$move_video);
                            
                     echo "<span class='success'>New Record Created Successfully!</span>";
                     } else {
@@ -82,8 +95,14 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-floating mb-3 mb-md-0">
-                                <input name="image" class="form-control" type="file" placeholder="Enter your last name" />
+                                <input name="image" class="form-control" accept="image/*" type="file" placeholder="Enter your last name" />
                                 <label for="inputFirstName">Image</label>
+                            </div>
+                        </div>                    
+                        <div class="col-md-6">
+                            <div class="form-floating mb-3 mb-md-0">
+                                <input name="image" class="form-control" accept="video/*" type="file" placeholder="Enter your last name" />
+                                <label for="inputFirstName">Video</label>
                             </div>
                         </div>                    
                     </div>

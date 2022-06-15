@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 28, 2022 at 11:37 AM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 8.1.1
+-- Generation Time: Jun 15, 2022 at 08:43 PM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -61,6 +61,7 @@ CREATE TABLE `courses` (
   `hours` varchar(100) NOT NULL,
   `total_hit` int(11) NOT NULL,
   `ratting` int(11) NOT NULL,
+  `demo_video` varchar(191) DEFAULT NULL,
   `is_active` tinyint(4) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -69,12 +70,12 @@ CREATE TABLE `courses` (
 -- Dumping data for table `courses`
 --
 
-INSERT INTO `courses` (`course_id`, `category_id`, `course_title`, `banner`, `short_description`, `description`, `price`, `discount`, `hours`, `total_hit`, `ratting`, `is_active`, `created_at`) VALUES
-(2, 2, 'course ione ', 'image/39444b4f95.jpg', ' Fusce interdum, elit sit amet vehicula malesuada, eros libero elementum orci. ', 'Fusce interdum, elit sit amet vehicula malesuada, eros libero elementum orci.Fusce interdum, elit sit amet vehicula malesuada, eros libero elementum orci.Fusce interdum, elit sit amet vehicula malesuada, eros libero elementum orci.Fusce interdum, elit sit amet vehicula malesuada, eros libero elementum orci.Fusce interdum, elit sit amet vehicula malesuada, eros libero elementum orci.Fusce interdum, elit sit amet vehicula malesuada, eros libero elementum orci. ', '222', '22', '23', 2, 8, 0, '2022-03-07 17:18:11'),
-(3, 3, 'Php', 'image/e7dc872afa.jpg', '  Fusce interdum, elit sit amet vehicula malesuada, eros libero elementum orci.  ', 'Fusce interdum, elit sit amet vehicula malesuada, eros libero elementum orci.  ', '3000', '5', '2', 0, 0, 0, '2022-03-08 18:14:24'),
-(4, 2, 'Illustration', 'image/35c39be52b.jpg', '  ffffff interdum, elit sit amet hg uk kkjl ojjoi , eros libero elementum orci.', '  ffffff interdum, elit sit amet hg uk kkjl ojjoi , eros libero elementum orci. ffffff interdum, elit sit amet hg uk kkjl ojjoi , eros libero elementum orci. ffffff interdum, elit sit amet hg uk kkjl ojjoi , eros libero elementum orci. ffffff interdum, elit sit amet hg uk kkjl ojjoi , eros libero elementum orci. ffffff interdum, elit sit amet hg uk kkjl ojjoi , eros libero elementum orci. ffffff interdum, elit sit amet hg uk kkjl ojjoi , eros libero elementum orci. ffffff interdum, elit sit amet hg uk kkjl ojjoi , eros libero elementum orci. ffffff interdum, elit sit amet hg uk kkjl ojjoi , eros libero elementum orci. ffffff interdum, elit sit amet hg uk kkjl ojjoi , eros libero elementum orci. ffffff interdum, elit sit amet hg uk kkjl ojjoi , eros libero elementum orci. ffffff interdum, elit sit amet hg uk kkjl ojjoi , eros libero elementum orci. ffffff interdum, elit sit amet hg uk kkjl ojjoi , eros libero elementum orci. ffffff interdum, elit sit amet hg uk kkjl ojjoi , eros libero elementum orci.vv', '2000', '10', '120', 0, 0, 0, '2022-03-08 18:43:35'),
-(5, 2, 'Illustration', 'image/a80bbc797a.jpg', '   ffffff interdum, elit sit amet hg uk kkjl ojjoi , eros libero elementum orci. ', '  ffffff interdum, elit sit amet hg uk kkjl ojjoi , eros libero elementum orci. ffffff interdum, elit sit amet hg uk kkjl ojjoi , eros libero elementum orci. ffffff interdum, elit sit amet hg uk kkjl ojjoi , eros libero elementum orci. ffffff interdum, elit sit amet hg uk kkjl ojjoi , eros libero elementum orci. ffffff interdum, elit sit amet hg uk kkjl ojjoi , eros libero elementum orci. ffffff interdum, elit sit amet hg uk kkjl ojjoi , eros libero elementum orci. ffffff interdum, elit sit amet hg uk kkjl ojjoi , eros libero elementum orci. ffffff interdum, elit sit amet hg uk kkjl ojjoi , eros libero elementum orci. ffffff interdum, elit sit amet hg uk kkjl ojjoi , eros libero elementum orci. ffffff interdum, elit sit amet hg uk kkjl ojjoi , eros libero elementum orci. ffffff interdum, elit sit amet hg uk kkjl ojjoi , eros libero elementum orci. ffffff interdum, elit sit amet hg uk kkjl ojjoi , eros libero elementum orci. ffffff interdum, elit sit amet hg uk kkjl ojjoi , eros libero elementum orci.vv ', '2000', '10', '120', 0, 0, 0, '2022-03-08 18:44:25'),
-(6, 6, 'Cooking', 'image/11dbc911ec.jpg', ' cook first ', ' expert cook ', '1200', '20', '60', 0, 0, 0, '2022-03-18 09:56:59');
+INSERT INTO `courses` (`course_id`, `category_id`, `course_title`, `banner`, `short_description`, `description`, `price`, `discount`, `hours`, `total_hit`, `ratting`, `demo_video`, `is_active`, `created_at`) VALUES
+(2, 2, 'course ione ', 'image/39444b4f95.jpg', ' Fusce interdum, elit sit amet vehicula malesuada, eros libero elementum orci. ', 'Fusce interdum, elit sit amet vehicula malesuada, eros libero elementum orci.Fusce interdum, elit sit amet vehicula malesuada, eros libero elementum orci.Fusce interdum, elit sit amet vehicula malesuada, eros libero elementum orci.Fusce interdum, elit sit amet vehicula malesuada, eros libero elementum orci.Fusce interdum, elit sit amet vehicula malesuada, eros libero elementum orci.Fusce interdum, elit sit amet vehicula malesuada, eros libero elementum orci. ', '222', '22', '23', 2, 8, NULL, 0, '2022-03-07 17:18:11'),
+(3, 3, 'Php', 'image/e7dc872afa.jpg', '  Fusce interdum, elit sit amet vehicula malesuada, eros libero elementum orci.  ', 'Fusce interdum, elit sit amet vehicula malesuada, eros libero elementum orci.  ', '3000', '5', '2', 0, 0, NULL, 0, '2022-03-08 18:14:24'),
+(4, 2, 'Illustration', 'image/35c39be52b.jpg', '  ffffff interdum, elit sit amet hg uk kkjl ojjoi , eros libero elementum orci.', '  ffffff interdum, elit sit amet hg uk kkjl ojjoi , eros libero elementum orci. ffffff interdum, elit sit amet hg uk kkjl ojjoi , eros libero elementum orci. ffffff interdum, elit sit amet hg uk kkjl ojjoi , eros libero elementum orci. ffffff interdum, elit sit amet hg uk kkjl ojjoi , eros libero elementum orci. ffffff interdum, elit sit amet hg uk kkjl ojjoi , eros libero elementum orci. ffffff interdum, elit sit amet hg uk kkjl ojjoi , eros libero elementum orci. ffffff interdum, elit sit amet hg uk kkjl ojjoi , eros libero elementum orci. ffffff interdum, elit sit amet hg uk kkjl ojjoi , eros libero elementum orci. ffffff interdum, elit sit amet hg uk kkjl ojjoi , eros libero elementum orci. ffffff interdum, elit sit amet hg uk kkjl ojjoi , eros libero elementum orci. ffffff interdum, elit sit amet hg uk kkjl ojjoi , eros libero elementum orci. ffffff interdum, elit sit amet hg uk kkjl ojjoi , eros libero elementum orci. ffffff interdum, elit sit amet hg uk kkjl ojjoi , eros libero elementum orci.vv', '2000', '10', '120', 0, 0, NULL, 0, '2022-03-08 18:43:35'),
+(5, 2, 'Illustration', 'image/a80bbc797a.jpg', '   ffffff interdum, elit sit amet hg uk kkjl ojjoi , eros libero elementum orci. ', '  ffffff interdum, elit sit amet hg uk kkjl ojjoi , eros libero elementum orci. ffffff interdum, elit sit amet hg uk kkjl ojjoi , eros libero elementum orci. ffffff interdum, elit sit amet hg uk kkjl ojjoi , eros libero elementum orci. ffffff interdum, elit sit amet hg uk kkjl ojjoi , eros libero elementum orci. ffffff interdum, elit sit amet hg uk kkjl ojjoi , eros libero elementum orci. ffffff interdum, elit sit amet hg uk kkjl ojjoi , eros libero elementum orci. ffffff interdum, elit sit amet hg uk kkjl ojjoi , eros libero elementum orci. ffffff interdum, elit sit amet hg uk kkjl ojjoi , eros libero elementum orci. ffffff interdum, elit sit amet hg uk kkjl ojjoi , eros libero elementum orci. ffffff interdum, elit sit amet hg uk kkjl ojjoi , eros libero elementum orci. ffffff interdum, elit sit amet hg uk kkjl ojjoi , eros libero elementum orci. ffffff interdum, elit sit amet hg uk kkjl ojjoi , eros libero elementum orci. ffffff interdum, elit sit amet hg uk kkjl ojjoi , eros libero elementum orci.vv ', '2000', '10', '120', 0, 0, NULL, 0, '2022-03-08 18:44:25'),
+(6, 6, 'Cooking', 'image/b5254c7d58.jpg', '   cook first   ', ' expert cook   ', '1200', '20', '60', 0, 0, 'video/b5254c7d58.mp4', 0, '2022-03-18 09:56:59');
 
 -- --------------------------------------------------------
 
@@ -100,7 +101,7 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`order_id`, `course_id`, `course_price`, `discount_price`, `enroll_at`, `customer_id`, `payment_type`, `account_no`, `ref`, `status`) VALUES
-(1, 6, '1000', '800', '2022-05-11 15:34:07', 2, 'Bkash', '1215469846', '87', 0),
+(1, 6, '1000', '800', '2022-05-11 15:34:07', 2, 'Bkash', '1215469846', '87', 1),
 (9, 4, '2000', '1800', '0000-00-00 00:00:00', 3, 'Bkash', '1215469846', '43', 1);
 
 -- --------------------------------------------------------
