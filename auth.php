@@ -25,7 +25,7 @@ if (isset($_POST['register'])) {
 
   $query1 = "SELECT * FROM users WHERE email='$email'";
   $emailcheck = $con->query($query1);
-  $query2 = "SELECT * FROM users WHERE phone=$phone";
+  $query2 = "SELECT * FROM users WHERE phone='$phone'";
   $phonecheck = $con->query($query2);
   if (!preg_match("/^[a-zA-Z-']*$/", $first_name)) {
     $msg = "Only letters allowed for first Name";
@@ -35,6 +35,8 @@ if (isset($_POST['register'])) {
     $msg = "Password Minimum 8 Digit";
   } elseif (strlen($phone) != 11) {
     $msg = "Phone Only 11 Digit";
+  }elseif (!preg_match("/^[0-9']*$/", $phone)) {
+    $msg = "Only number is allowed";
   } elseif ($emailcheck->num_rows > 0) {
     $msg = "This email already been Registered";
   } elseif ($phonecheck->num_rows > 0) {
@@ -95,9 +97,12 @@ if(isset($_POST['login'])){
           <form action="" method="post">
             <h2>Sign In</h2>
             <div class="text-danger">
-            <?php
-            echo $msg;
-          ?>
+              <h4 style="color:red;">
+              <?php
+                echo $msg;
+              ?>
+              </h4>
+           
           </div>
             <input type="email" name="email" placeholder="email" />
             <input type="password" name="password" placeholder="Password" />
@@ -114,13 +119,15 @@ if(isset($_POST['login'])){
           <form action="" method="POST">
             <h2>Create an account</h2>
             <div class="text-danger">
-            <?php
-            echo $msg;
-          ?>
+            <h4 style="color:red;">
+              <?php
+                echo $msg;
+              ?>
+              </h4>
           </div>
             <input type="text" required name="first_name" placeholder="First name" />
             <input type="text" required name="last_name" placeholder="Last name" />
-            <input type="number" required name="phone" placeholder="Phone Number" />
+            <input type="text" required name="phone"  placeholder="Phone Number" />
             <input type="email" required name="email" placeholder="Email Address" />
             <input type="password" required name="password" placeholder="Password" />
             <input type="submit" name="register" value="Sign Up" />

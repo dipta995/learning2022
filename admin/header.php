@@ -81,7 +81,7 @@ echo "<script>window.location='../auth.php';</script>";
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="courses.php">Course List</a>
-                                    <a class="nav-link" href="course-video.php">Create New Course</a>
+                                    <a class="nav-link" href="createcourse.php">Create New Course</a>
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
