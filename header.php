@@ -48,8 +48,6 @@
 
     ?>
 
-
-
     <div id="wrapper">
         <!-- BEGIN # MODAL LOGIN -->
         <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
@@ -72,7 +70,18 @@
         <!-- END # MODAL LOGIN -->
 
         <header class="header">
-           
+        <div class="topbar clearfix">
+                <div class="container">
+                <div class="row-fluid">
+                        <div class="col-md-6 col-sm-6 text-left">
+                            <p>
+                                <strong><i class="fa fa-phone"></i></strong> +90 543 123 45 67 &nbsp;&nbsp;
+                                <strong><i class="fa fa-envelope"></i></strong> <a href="mailto:#">info@yoursite.com</a>
+                            </p>
+                        </div><!-- end left -->
+                    </div><!-- end row -->
+                </div><!-- end container -->
+            </div><!-- end topbar -->
 
             <div class="container">
                 <nav class="navbar navbar-default yamm">

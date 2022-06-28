@@ -16,11 +16,11 @@ if (isset($_GET['editid']) && isset($_POST['edit'])) {
     $editquery ="UPDATE categories  
     SET
     cat_name       = '$catname'
- WHERE cat_id = $editid";
-      $edit = $con->query($editquery);
-      if ($edit) {
-          echo "<script>window.location='category.php';</script>";
-      }
+    WHERE cat_id = $editid";
+    $edit = $con->query($editquery);
+    if ($edit) {
+        echo "<script>window.location='category.php';</script>";
+    }
     
 }
 if (isset($_POST['create'])) {
@@ -39,34 +39,33 @@ if (isset($_POST['create'])) {
 
     <div class="container-fluid px-4">
     <h1 class="mt-4">Create Category <a class="btn btn-info" href="createcar.php">Categories</a></h1>
-                        <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
-                            <li class="breadcrumb-item active">categories</li>
-                        </ol>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
+            <li class="breadcrumb-item active">Categories</li>
+        </ol>
         <div class="row">
             <div class="col-md-8">
                 <div class="card-body">
-
                     <table id="datatablesSimple">
                         <thead>
                             <tr>
-                                <th>#</th>
+                                <th>No.</th>
                                 <th>Name</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
-                                <th>#</th>
+                                <th>No.</th>
                                 <th>Name</th>
                                 <th>Action</th>
                             </tr>
                         </tfoot>
                         <tbody>
-<?php
-if ($result->num_rows > 0) {
-    foreach ($result as $key => $value) {
-?>
+                            <?php
+                            if ($result->num_rows > 0) {
+                                foreach ($result as $key => $value) {
+                            ?>
                             <tr>
                                 <td><?php echo $key+1; ?></td>
                                 <td><?php echo $value['cat_name']; ?></td>
@@ -76,9 +75,8 @@ if ($result->num_rows > 0) {
                                 </td>
                             </tr>
                            
-<?php } } ?>
-
-
+                            <?php } } ?>
+                            
                         </tbody>
                     </table>
 

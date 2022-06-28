@@ -17,40 +17,39 @@
                 $addid = $_GET['addid'];
             }
                   
-                if(isset($_POST['submit'])){
-                    $course_id = $_POST['course_id'];
-                    $video_title = mysqli_real_escape_string($con,$_POST['video_title']); 
-                
-                
-                    $file_name = $_FILES['image']['name'];
-                    $file_size = $_FILES['image']['size'];
-                    $file_temp = $_FILES['image']['tmp_name'];
+            if(isset($_POST['submit'])){
+                $course_id = $_POST['course_id'];
+                $video_title = mysqli_real_escape_string($con, $_POST['video_title']); 
+                            
+                $file_name = $_FILES['image']['name'];
+                $file_size = $_FILES['image']['size'];
+                $file_temp = $_FILES['image']['tmp_name'];
 
-                    $div            = explode('.', $file_name);
-                    $file_ext       = strtolower(end($div));
-                    $ext_arr        = array("mp4", "avi", "3gp", "mov", "mpeg");
-                    $unique_image   = substr(md5(time()), 0, 10).'.'.$file_ext;
-                    $uploaded_image = "videos/".$unique_image;
-                    $move_image     = "videos/".$unique_image;
+                $div            = explode('.', $file_name);
+                $file_ext       = strtolower(end($div));
+                $ext_arr        = array("mp4", "avi", "3gp", "mov", "mpeg");
+                $unique_image   = substr(md5(time()), 0, 10).'.'.$file_ext;
+                $uploaded_image = "videos/".$unique_image;
+                $move_image     = "../videos/".$unique_image;
 
-                    if (empty($video_title) ) {
-                        echo "<span class='error'>Field Must Not be Empty!</span>"; 
-                    } elseif(!in_array( $file_ext, $ext_arr)){
-                        echo "<span class='error'>Invalid File Extension!</span>";
-                    } else{        
-                        $sql = "INSERT INTO videos (video_title,course_id,video_url)
-                        VALUES ('$video_title','$course_id','$uploaded_image')";
+                if (empty($video_title) ) {
+                    echo "<span class='error'>Field Must Not be Empty!</span>"; 
+                } elseif(!in_array( $file_ext, $ext_arr)){
+                    echo "<span class='error'>Invalid File Extension!</span>";
+                } else{        
+                    $sql = "INSERT INTO videos (video_title,course_id,video_url)
+                    VALUES ('$video_title','$course_id','$uploaded_image')";
 
-                        if ($con->query($sql) === TRUE) {                     
-                            move_uploaded_file($file_temp, $move_image);
-                            echo "<span class='success'>New Record Created Successfully!!</span>";
-                        } else {
-                            echo "Error: " . $sql . "<br>" . $con->error;
-                        }
-                      }                             
-                  }
+                    if ($con->query($sql) === TRUE) {                     
+                        move_uploaded_file($file_temp, $move_image);
+                        echo "<span class='success'>New Record Created Successfully!!</span>";
+                    } else {
+                        echo "Error: " . $sql . "<br>" . $con->error;
+                    }
+                }                             
+             }
 
-                  ?>
+            ?>
 
                 <div class="row mb-3">
                     <div class="col-md-6">

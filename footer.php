@@ -1,6 +1,4 @@
 
-     
-
         <div class="copyrights">
             <div class="container">
                 <div class="clearfix">
@@ -13,7 +11,7 @@
                     <div class="pull-right">
                         <div class="footer-links">
                             <ul class="list-inline">
-                                <li>copyrights  @ all right resurved</li>
+                                <li>Copyright  @ all right reserved</li>
                             </ul>
                         </div>
                     </div>

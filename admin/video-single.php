@@ -59,7 +59,7 @@
                             <td>
                                 <a href="editvideo.php?editid=<?php echo $value['video_id']; ?>" class="btn btn-info">Edit</a>
                                 
-                                <a onclick="return confirm('Are you sure to Delete?');" href="?delid=<?php echo $value['video_id']; ?>&vidid=<?php echo $vidid; ?>"  class="btn btn-danger">Delete</a>
+                                <a onclick="return confirm('Are you sure to Delete?');" href="?delid=<?php echo $value['video_id']; ?>&vidid=<?php echo $vidid; ?>" class="btn btn-danger">Delete</a>
                             </td>
                         </tr>
                         <?php }

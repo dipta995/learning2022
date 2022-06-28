@@ -1,7 +1,7 @@
 <?php include 'header.php'; ?>
 <main>
-    <div class="container-fluid px-4">
-    
+    <div class="container-fluid px-4">   
+    <h1 class="mt-4">Enroll <a class="btn btn-info" href="pending-course.php">Pending Courses</a></h1>
         <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
             <li class="breadcrumb-item active">Pending Courses</li>

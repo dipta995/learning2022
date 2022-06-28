@@ -97,7 +97,7 @@ body,
 p,
 li,
 a {
-    font-family: 'Roboto', sans-serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .course-details h4 a,
@@ -109,7 +109,7 @@ h3,
 h4,
 h5,
 h6 {
-    color: #000;
+    color: rgb(0, 0, 0);
 }
 
 h1,
