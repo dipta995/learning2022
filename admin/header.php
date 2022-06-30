@@ -109,8 +109,7 @@ echo "<script>window.location='../auth.php';</script>";
                                     </a>
                                     <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                                         <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="../auth.php">Login</a>
-                                            <a class="nav-link" href="../auth.php">Register</a>
+                                            <a class="nav-link" href="../auth.php">Login / Registration</a>
                                         </nav>
                                     </div>
 
