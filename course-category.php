@@ -8,7 +8,6 @@
     <div class="container">
         <div class="boxed boxedp4">
             <div class="row blog-grid">
-                            
             <?php
             $catid = $_GET['cat_id'];
                 $query = "SELECT * FROM courses left join categories on categories.cat_id = courses.category_id where courses.is_active = 0 and category_id =$catid Order By course_id DESC";

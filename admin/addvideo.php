@@ -29,8 +29,8 @@
                 $file_ext       = strtolower(end($div));
                 $ext_arr        = array("mp4", "avi", "3gp", "mov", "mpeg");
                 $unique_image   = substr(md5(time()), 0, 10).'.'.$file_ext;
-                $uploaded_image = "videos/".$unique_image;
-                $move_image     = "../videos/".$unique_image;
+                $uploaded_image = "videos/course/".$unique_image;
+                $move_image     = "../videos/course/".$unique_image;
 
                 if (empty($video_title) ) {
                     echo "<span class='error'>Field Must Not be Empty!</span>"; 

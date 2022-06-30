@@ -12,7 +12,7 @@ include 'header.php';
         <div class="row">
             <div class="col-md-6">
                 <div class="tagline-message page-title">
-                    <h3>My Courses</h3>
+                    <h3 style="font-family: cambria;">My Courses</h3>
                 </div>
             </div><!-- end col -->
             <div class="col-md-6 text-right">

@@ -12,13 +12,13 @@ include 'header.php';
             <div class="row">
                 <div class="col-md-6">
                     <div class="tagline-message page-title">
-                        <h3>Videos</h3>
+                        <h3>Course Tutorial</h3>
                     </div>
                 </div><!-- end col -->
                 <div class="col-md-6 text-right">
                     <ul class="breadcrumb">
                         <li><a href="javascript:void(0)">Edulogy</a></li>
-                        <li class="active">Videos</li>
+                        <li class="active">Tutorial</li>
                     </ul>
                 </div>
             </div><!-- end row -->
@@ -40,9 +40,10 @@ include 'header.php';
                     </video>
                 <?php } ?>
             </div>
+           
             <div class="playlist col-md-4">
                 <div class="card-head">
-                    <h4>Play List</h4>
+                    <h4>Playlist</h4>
                 </div>
                 <div class="card-body">
                     <br>
@@ -52,16 +53,15 @@ include 'header.php';
                     $query = "SELECT * FROM videos where course_id = $course_id Order By video_id DESC";
                     $result = $con->query($query);
                     if ($result->num_rows > 0) {
-                        $i = 0;
+                        $i = 1;                   
                         foreach ($result as $key => $value) {
-                            $i++; ?>
-                            <a class="<?php echo ($value['video_id'] == $_GET['videoid']) ? "text-danger" : ""; ?>" href="?courseid=<?php echo $course_id; ?>&videoid=<?php echo $value['video_id'] ?> "><?php echo $value['video_title'] ?> </a> <br>
+                            echo $i++;
+                            ?>
+                            <a class="<?php echo ($value['video_id'] == $_GET['videoid']) ? "text-danger" : ""; ?>" href="?courseid=<?php echo $course_id; ?>&videoid=<?php echo $value['video_id'] ?> "><?php echo $value['video_title'] ?> </a><br>
 
-                    <?php }
-                    } ?>
+                    <?php } } ?>
                     <br>
                 </div>
-
             </div>
         </div><!-- end row -->
 

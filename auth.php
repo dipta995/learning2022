@@ -69,7 +69,7 @@ if(isset($_POST['login'])){
           $_SESSION['email'] = $value['email'];
           $_SESSION['phone'] = $value['phone'];
           $_SESSION['user_id'] = $value['id'];
-        ;
+        
           if ($value['role']=='admin') {
              
             header('Location:admin/index.php');

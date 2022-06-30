@@ -1,5 +1,13 @@
 <?php 
 include 'header.php'; 
+
+if(isset($_SESSION['active']) == 'active'){
+    $customer_id =  $_SESSION['user_id'];
+}else{
+    echo "<script>window.location='auth.php';</script>";
+
+}
+
 if (isset($_GET['courseid'])) {
     $courseid = $_GET['courseid'];
 }else{
@@ -17,20 +25,21 @@ if(isset($_POST['submit']))	{
     $customer_id = $_POST['customer_id'];
     $payment_type = $_POST['payment_type'];
     $account_no = $_POST['account_no'];
-    $ref = $_POST['ref'];			
+    $ref = $_POST['ref'];	
+	$enroll_at = date('Y-m-d g:i a');		
 	if (strlen($account_no) < 11) {
 		echo "Account Number minimum 11 digit";
 	}elseif (strlen($account_no) >12) {
 		echo "Account Number maximum 12 digit";
-	  }elseif (strlen($ref) >8) {
+	}elseif (strlen($ref) >8) {
 		echo "Ref Number maximum 8 digit";
-	  }else{
+	}else{
 		$create ="INSERT INTO orders (course_id, course_price, discount_price, enroll_at, customer_id, payment_type, account_no, ref) VALUES ('$course_id', '$course_price', '$discount_price', '$enroll_at', '$customer_id', '$payment_type', '$account_no', '$ref')";
 		$edit = $con->query($create);
 		if ($edit) {
 			echo "<script>window.location='my-courses.php';</script>";
 		}
-	  }
+	}
 
 }	
 ?>
@@ -63,7 +72,7 @@ if(isset($_POST['submit']))	{
 						<div class="form-group">
 							<td>
 								<input type="hidden" name="course_id" value="<?php echo $value['course_id']; ?>"/>
-								<input type="hidden" name="customer_id" value="<?php echo $customer_id = $_SESSION['user_id']; ?>"/>
+								<input type="hidden" name="customer_id" value="<?php echo $customer_id; ?>"/>
 							</td>
 						</div>
 

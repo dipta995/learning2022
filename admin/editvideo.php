@@ -4,10 +4,10 @@
 ?>
 <main>
 <div class="container-fluid px-4">
-    <h1 class="mt-4">Update Video<a class="btn btn-info" href="courses.php">Courses</a></h1>
+    <h1 class="mt-4">Update Video <a class="btn btn-info" href="courses.php">Courses</a></h1>
     <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
-        <li class="breadcrumb-item active">Courses</li>
+        <li class="breadcrumb-item active">Update Video</li>
     </ol>
     <div class="card mb-4">
         <div class="card-body">
@@ -19,7 +19,6 @@
                 $result = $con->query($query);
                 if ($result->num_rows > 0) {
                     $value = mysqli_fetch_array($result);
-
                 }
             }
             ?>
@@ -36,8 +35,8 @@
                 $file_ext       = strtolower(end($div));
                 $ext_arr        = array("mp4", "avi", "3gp", "mov", "mpeg");
                 $unique_image   = substr(md5(time()), 0, 10).'.'.$file_ext;
-                $uploaded_image = "videos/".$unique_image;
-                $move_image     = "videos/".$unique_image;
+                $uploaded_image = "videos/course/".$unique_image;
+                $move_image     = "../videos/course/".$unique_image;
 
                 if (empty($video_title)) {
                     echo "<span class='error'>Field Must Not be Empty!</span>"; 
@@ -69,8 +68,7 @@
                             echo "Error: " . $sql . "<br>" . $con->error;
                         }
                     }     
-                }
-                        
+                }                       
             }
             ?>
 
@@ -85,9 +83,9 @@
 
             <div class="row mb-3">
                 <div class="col-md-6">
-                    <div class="form-floating">
-                        <input class="form-control"  type="file" name="image"  />
-                        <label for="inputLastName">Select Video</label>
+                    <div class="form-floating mb-3 mb-md-0">
+                        <input name="image" class="form-control" type="file" accept="video/*" placeholder="Enter your last name" />
+                        <label for="inputFirstName">Video</label>
                         <div>
                             <video width="300" height="250" controls>
                                 <source src="../<?php echo $value['video_url'];?>" type="video/mp4">
@@ -107,9 +105,7 @@
             </form>
         </div>
     </div>
-
     <div style="height: 100vh"></div>
-
 </div>
 </main>
 <?php include 'footer.php'; ?>

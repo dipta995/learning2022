@@ -37,8 +37,8 @@
                     $div1            = explode('.', $file_name1);
                     $file_ext1       = strtolower(end($div1));
                     $unique_video    = substr(md5(time()), 0, 10).'.'.$file_ext1;
-                    $uploaded_video  = "videos/".$unique_video;
-                    $move_video      = "../videos/".$unique_video;   
+                    $uploaded_video  = "videos/demo/".$unique_video;
+                    $move_video      = "../videos/demo/".$unique_video;   
                     
                     if (empty($short_description) ) {
                         echo "<span class='error'>Field Must Not be Empty</span>"; 

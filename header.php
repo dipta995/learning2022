@@ -46,6 +46,7 @@
         echo "<script>window.location='index.php';</script>";
     }
 
+    $role = $_SESSION['role'];    
     ?>
 
     <div id="wrapper">
@@ -75,8 +76,8 @@
                 <div class="row-fluid">
                         <div class="col-md-6 col-sm-6 text-left">
                             <p>
-                                <strong><i class="fa fa-phone"></i></strong> +90 543 123 45 67 &nbsp;&nbsp;
-                                <strong><i class="fa fa-envelope"></i></strong> <a href="mailto:#">info@yoursite.com</a>
+                                <!-- <strong><i class="fa fa-phone"></i></strong> +90 543 123 45 67 &nbsp;&nbsp; -->
+                                <strong><i class="fa fa-envelope"></i></strong> <a href="mailto:#">learning@hotmail.com</a>
                             </p>
                         </div><!-- end left -->
                     </div><!-- end row -->
@@ -121,7 +122,7 @@
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo $_SESSION['first_name'] ?> <span class="fa fa-angle-down"></span></a>
                                 <ul class="dropdown-menu" role="menu">
                                 <?php if ($_SESSION['role']=="admin") {
-                                    echo '<li><a href="profile.php">Admin</a></li>';
+                                    //echo '<li><a href="profile.php">Admin</a></li>';
                                 }?>
                                    
                                     <li><a href="my-courses.php">My Courses</a></li>
@@ -132,7 +133,7 @@
                             <?php }else{?>
                                 <li><a href="auth.php">Login</a></li>
                                 <?php  } ?>
-                            <li><a href="page-contact.html">Contact</a></li>
+                            <!-- <li><a href="page-contact.html">Contact</a></li> -->
                             <li class="iconitem"><a href="#" data-toggle="modal" data-target="#login-modal"><i class="fa fa-search"></i></a></li>
                         </ul>
                     </div>

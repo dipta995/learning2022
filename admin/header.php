@@ -49,10 +49,11 @@ echo "<script>window.location='../auth.php';</script>";
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#!">Settings</a></li>
-                        <li><a class="dropdown-item" href="#!">Activity Log</a></li>
+                        <!-- <li><a class="dropdown-item" href="#!">Settings</a></li>
+                        <li><a class="dropdown-item" href="#!">Activity Log</a></li> -->
                         <li><hr class="dropdown-divider" /></li>
                         <li><a class="dropdown-item" href="?logout=logout">Logout</a></li>
+                        <li><hr class="dropdown-divider" /></li>
                     </ul>
                 </li>
             </ul>
@@ -108,12 +109,12 @@ echo "<script>window.location='../auth.php';</script>";
                                     </a>
                                     <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                                         <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="login.html">Login</a>
-                                            <a class="nav-link" href="register.html">Register</a>
-                                            <a class="nav-link" href="password.html">Forgot Password</a>
+                                            <a class="nav-link" href="../auth.php">Login</a>
+                                            <a class="nav-link" href="../auth.php">Register</a>
                                         </nav>
                                     </div>
-                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
+
+                                    <!-- <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
                                         Error
                                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                                     </a>
@@ -122,10 +123,10 @@ echo "<script>window.location='../auth.php';</script>";
                                             <a class="nav-link" href="401.html">401 Page</a>
                                             <a class="nav-link" href="404.html">404 Page</a>
                                         </nav>
-                                    </div>
+                                    </div> -->
                                 </nav>
                             </div>
-                            <div class="sb-sidenav-menu-heading">Addons</div>
+                            <!-- <div class="sb-sidenav-menu-heading">Addons</div>
                             <a class="nav-link" href="charts.html">
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                                 Charts
@@ -133,7 +134,7 @@ echo "<script>window.location='../auth.php';</script>";
                             <a class="nav-link" href="tables.html">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Tables
-                            </a>
+                            </a> -->
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">
