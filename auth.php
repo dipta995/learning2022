@@ -27,20 +27,25 @@ if (isset($_POST['register'])) {
   $emailcheck = $con->query($query1);
   $query2 = "SELECT * FROM users WHERE phone='$phone'";
   $phonecheck = $con->query($query2);
+
   if (!preg_match("/^[a-zA-Z-']*$/", $first_name)) {
-    $msg = "Only letters allowed for first Name";
+    $msg = "Only letters are allowed for first Name";
   } elseif (!preg_match("/^[a-zA-Z-']*$/", $last_name)) {
-    $msg = "Only letters allowed for Last Name";
+    $msg = "Only letters are allowed for Last Name";
   } elseif (strlen($password) < 8) {
-    $msg = "Password Minimum 8 Digit";
+    $msg = "Password must be minimum 8 Digit";
   } elseif (strlen($phone) != 11) {
-    $msg = "Phone Only 11 Digit";
-  }elseif (!preg_match("/^[0-9']*$/", $phone)) {
-    $msg = "Only number is allowed";
+    $msg = "Phone number must be 11 Digits";
+  } elseif (!preg_match("/^(?:\\+88|88)?(01[3-9]\\d{8})/", $phone)) {
+    $msg = "Phone number is not valid (First two digits must be '01'!)";
+  } elseif (!preg_match("/(^[a-z0-9]+$){0,}([.]?(^[a-z0-9]+$){1,})/", $email)) {
+    $msg = "Invalid email address (Only lowercase letters allowed!)";
+  } elseif (!preg_match("/[@](gmail.com|hotmail.com|yahoo.com)/", $email)) {
+    $msg = "Invalid email address (Please enter gmail, hotmail or yahoo!)";
   } elseif ($emailcheck->num_rows > 0) {
-    $msg = "This email already been Registered";
+    $msg = "This email address has already been Registered";
   } elseif ($phonecheck->num_rows > 0) {
-    $msg = "This email already been Registered";
+    $msg = "This phone no. has already been Registered";
   } else {
     $query = "INSERT INTO users(first_name,last_name,email,phone,password,role)VALUES('$first_name','$last_name','$email','$phone','$password','user')";
     $result = $con->query($query);
