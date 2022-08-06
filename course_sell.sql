@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 30, 2022 at 02:28 PM
+-- Generation Time: Aug 06, 2022 at 11:14 AM
 -- Server version: 10.4.24-MariaDB
--- PHP Version: 7.4.29
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -92,6 +92,7 @@ CREATE TABLE `orders` (
   `enroll_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `customer_id` int(11) NOT NULL,
   `payment_type` varchar(191) NOT NULL,
+  `payment_no` varchar(100) NOT NULL,
   `account_no` varchar(100) NOT NULL,
   `ref` varchar(191) NOT NULL,
   `status` tinyint(4) NOT NULL DEFAULT 0
@@ -101,10 +102,11 @@ CREATE TABLE `orders` (
 -- Dumping data for table `orders`
 --
 
-INSERT INTO `orders` (`order_id`, `course_id`, `course_price`, `discount_price`, `enroll_at`, `customer_id`, `payment_type`, `account_no`, `ref`, `status`) VALUES
-(1, 6, '1000', '800', '2022-05-11 09:34:07', 2, 'Bkash', '1215469846', '87', 1),
-(14, 6, '3000', '2400', '2022-06-30 06:27:00', 1, 'Bkash', '12345678900', '234', 1),
-(15, 5, '2000', '1800', '2022-06-29 19:36:00', 1, 'Bkash', '12345678900', '657', 1);
+INSERT INTO `orders` (`order_id`, `course_id`, `course_price`, `discount_price`, `enroll_at`, `customer_id`, `payment_type`, `payment_no`, `account_no`, `ref`, `status`) VALUES
+(1, 6, '1000', '800', '2022-05-11 09:34:07', 2, 'Bkash', '', '1215469846', '87', 1),
+(14, 6, '3000', '2400', '2022-06-30 06:27:00', 1, 'Bkash', '', '12345678900', '234', 1),
+(15, 5, '2000', '1800', '2022-06-29 19:36:00', 1, 'Bkash', '', '12345678900', '657', 1),
+(19, 11, '3000', '2700', '2022-08-06 05:05:00', 4, 'Rocket', '01458756873', '01568767574', '657', 0);
 
 -- --------------------------------------------------------
 
@@ -243,7 +245,7 @@ ALTER TABLE `courses`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `review`
