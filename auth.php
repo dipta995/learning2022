@@ -38,14 +38,12 @@ if (isset($_POST['register'])) {
     $msg = "Phone number must be 11 Digits";
   } elseif (!preg_match("/^(?:\\+88|88)?(01[3-9]\\d{8})/", $phone)) {
     $msg = "Phone number is not valid (First two digits must be '01'!)";
-  } elseif (!preg_match("/(^[a-z0-9]+$){0,}([.]?(^[a-z0-9]+$){1,})/", $email)) {
-    $msg = "Invalid email address (Only lowercase letters allowed!)";
-  } elseif (!preg_match("/[@](gmail.com|hotmail.com|yahoo.com)/", $email)) {
-    $msg = "Invalid email address (Please enter gmail, hotmail or yahoo!)";
+  } elseif (!preg_match("/^[0-9a-z]+(?:\.[0-9a-z]+)[@](gmail.com|hotmail.com|yahoo.com)/", $email)) {
+    $msg = "Invalid email address!";
   } elseif ($emailcheck->num_rows > 0) {
     $msg = "This email address has already been Registered";
   } elseif ($phonecheck->num_rows > 0) {
-    $msg = "This phone no. has already been Registered";
+    $msg = "This phone number has already been Registered";
   } else {
     $query = "INSERT INTO users(first_name,last_name,email,phone,password,role)VALUES('$first_name','$last_name','$email','$phone','$password','user')";
     $result = $con->query($query);
