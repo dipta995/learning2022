@@ -29,6 +29,7 @@ include 'header.php';
                             <th>No.</th>
                             <th>Course Name</th>
                             <th>Amount</th>
+                            <th>Payment No.</th>
                             <th>Payment Account</th>
                             <th>Ref.</th>
                             <th>Action</th>
@@ -57,7 +58,8 @@ include 'header.php';
                         <tr>
                             <td><?php echo $i; ?></td>
                             <td><?php echo $value['course_title'] ?></td>
-                            <td><?php echo $value['discount_price']; ?> BDT</td>               
+                            <td><?php echo $value['discount_price']; ?> BDT</td>
+                            <td><?php echo $value['payment_no']; ?></td>               
                             <td><?php echo $value['payment_type']."<br> ".$value['account_no']; ?></td>
                             <td><?php echo $value['ref'] ?></td>
                             <td>
