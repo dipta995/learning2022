@@ -38,9 +38,7 @@ if (isset($_POST['register'])) {
     $msg = "Phone number must be 11 Digits";
   } elseif (!preg_match("/^(?:\\+88|88)?(01[3-9]\\d{8})/", $phone)) {
     $msg = "Phone number is not valid (First two digits must be '01'!)";
-  } elseif (!preg_match("/^[0-9a-z]+(?:\.[0-9a-z]+)[@](gmail.com|hotmail.com|yahoo.com)/", $email)) {
-    $msg = "Invalid email address!";
-  } elseif ($emailcheck->num_rows > 0) {
+  }  elseif ($emailcheck->num_rows > 0) {
     $msg = "This email address has already been Registered";
   } elseif ($phonecheck->num_rows > 0) {
     $msg = "This phone number has already been Registered";
