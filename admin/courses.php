@@ -12,7 +12,7 @@
                 <table id="datatablesSimple">
                     <thead>
                         <tr>
-                            <th width="5%">#</th>
+                            <th width="5%">Sl</th>
                             <th width="15%">Course Title</th>
                             <th width="10%">Price</th>
                             <th width="10%">Discount</th>
@@ -23,7 +23,7 @@
                     </thead>
                     <tfoot>
                         <tr>
-                            <th>#</th>
+                            <th>Sl</th>
                             <th>Course Title</th>
                             <th>Price</th>
                             <th>Discount</th>
@@ -60,15 +60,15 @@
                             <td><img style="height:60px; width: 60px;" src="../<?php echo $value['banner']; ?>"></td>
 
                             <td>
-                                <a href="editcourse.php?editid=<?php echo $value['course_id']; ?>" class="btn btn-info">Edit</a>
-                                <a href="addvideo.php?addid=<?php echo $value['course_id']; ?>" class="btn btn-success">Add Video</a>
-                                <a href="video-single.php?vidid=<?php echo $value['course_id']; ?>" class="btn btn-success">All Video</a>
-                                <a onclick="return confirm('Are you sure to Delete?');" href="?delid=<?php echo $value['course_id']; ?>" class="btn btn-danger">Delete</a>
+                                <a href="editcourse.php?editid=<?php echo $value['course_id']; ?>" class="btn btn-info btn-sm">Edit</a>
+                                <a href="addvideo.php?addid=<?php echo $value['course_id']; ?>" class="btn btn-success btn-sm">Add Video</a>
+                                <a href="video-single.php?vidid=<?php echo $value['course_id']; ?>" class="btn btn-success btn-sm">All Video</a>
+                                <a href="review.php?revid=<?php echo $value['course_id']; ?>" class="btn btn-primary btn-sm">Review</a>
+                                <a onclick="return confirm('Are you sure to Delete?');" href="?delid=<?php echo $value['course_id']; ?>" class="btn btn-danger btn-sm">Delete</a>
                             </td>
                         </tr>
                         <?php }
                         } ?>
-
 
                     </tbody>
                 </table>

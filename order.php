@@ -33,7 +33,9 @@ if(isset($_POST['submit']))	{
 	}elseif (!preg_match("/^(?:\\+88|88)?(01[3-9]\\d{8})/", $account_no)) {
 		echo "Account number is not valid!";
 	}elseif (strlen($ref) >8) {
-		echo "Ref Number maximum 8 digit";
+		echo "Ref number maximum 8 digit";
+	}elseif ($payment_no == "") {
+		echo "Please select payment number!";
 	}else{
 		$create ="INSERT INTO orders (course_id, course_price, discount_price, enroll_at, customer_id, payment_type, payment_no, account_no, ref) VALUES ('$course_id', '$course_price', '$discount_price', '$enroll_at', '$customer_id', '$payment_type', '$payment_no', '$account_no', '$ref')";
 		$edit = $con->query($create);
@@ -62,7 +64,7 @@ $(document).ready(function () {
         } else if (val == "Rocket") {
             $("#number").html("<option value='01458756873'>01458756873</option>");
         } else {
-            $("#number").html("<option value=''> SELECT PAYMENT TYPE </option>");
+            $("#number").html("<option> SELECT PAYMENT TYPE </option>");
         }
     });
 });
@@ -119,7 +121,7 @@ $(document).ready(function () {
 						<div class="form-group">
 						<label>PAYMENT NUMBER</label>
 							<select class="form-control" name="payment_no" id="number">
-								<option value=""> SELECT PAYMENT TYPE </option>
+								<option> SELECT PAYMENT TYPE </option>
 							</select>
 						</div>
 

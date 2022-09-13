@@ -1,7 +1,7 @@
 <?php include 'header.php'; ?>
 <main>
-    <div class="container-fluid px-4">   
-    <h1 class="mt-4">Enroll <a class="btn btn-info" href="pending-course.php">Pending Courses</a></h1>
+    <div class="container-fluid px-4">
+        <h1 class="mt-4">Enroll <a class="btn btn-info" href="pending-course.php">Pending Courses</a></h1>
         <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
             <li class="breadcrumb-item active">Pending Courses</li>
@@ -12,7 +12,7 @@
                 <table id="datatablesSimple">
                     <thead>
                         <tr>
-                            <th>#</th>
+                            <th>Sl</th>
                             <th>Course Name</th>
                             <th>Payable Amount</th>
                             <th>Student Name</th>
@@ -24,7 +24,7 @@
                     </thead>
                     <tfoot>
                         <tr>
-                            <th>#</th>
+                            <th>Sl</th>
                             <th>Course Name</th>
                             <th>Payable Amount</th>
                             <th>Student Name</th>
@@ -39,7 +39,7 @@
 
                         if (isset($_GET['confirmid'])) {
                             $confirmid = $_GET['confirmid'];
-                            $editquery ="UPDATE orders  
+                            $editquery = "UPDATE orders  
                                 SET
                                 status       = 1
                             WHERE order_id = $confirmid";
@@ -69,13 +69,13 @@
                                     <td><?php echo $i; ?></td>
                                     <td><?php echo $value['course_title'] ?></td>
                                     <td><?php echo $value['discount_price']; ?> BDT</td>
-                                    <td><?php echo $value['first_name']." ".$value['last_name']; ?></td>
+                                    <td><?php echo $value['first_name'] . " " . $value['last_name']; ?></td>
                                     <td><?php echo $value['phone']; ?></td>
-                                    <td><?php echo $value['payment_type']."<br> ".$value['account_no']; ?></td>
-                                    
+                                    <td><?php echo $value['payment_type'] . "<br> " . $value['account_no']; ?></td>
+
                                     <td><?php echo $value['ref'] ?></td>
                                     <td>
-                                        <a href="?confirmid=<?php echo $value['order_id']; ?>" class="btn btn-info">Confirm now</a>
+                                        <a href="?confirmid=<?php echo $value['order_id']; ?>" class="btn btn-info">Confirm</a>
                                         <a href="?delid=<?php echo $value['order_id']; ?>" class="btn btn-danger">Cancel</a>
                                         <!-- <a target="_blank" href="../car-single.php?carid=" class="btn btn-success">Show Details</a> -->
                                     </td>

@@ -704,7 +704,7 @@ EVENTS
     cursor: pointer;
 }
 
-teammembers .magnifier {
+.teammembers .magnifier {
     overflow: hidden;
 }
 
@@ -1811,8 +1811,8 @@ SHOP
 }
 
 .shop-extra {
-    margin-top: 40px;
-    padding: 60px 60px 40px;
+    margin-top: 20px;
+    padding: 20px 20px 20px;
     border: 3px solid #f6f6f6;
 }
 
@@ -1840,7 +1840,7 @@ SHOP
 }
 
 .shop-extra .tab-content {
-    padding: 40px 0 30px;
+    padding: 40px 20px 30px;
 }
 
 .shop-extra strong {

@@ -22,48 +22,50 @@ include 'header.php';
                     </ul>
                 </div>
             </div><!-- end row -->
-        <div class="row">
-            <div class="col-md-8">
-                <?php
-                $course_id  = $_GET['courseid'];
-                $videoid = $_GET['videoid'];
-                $query = "SELECT * FROM videos where video_id = $videoid";
-                $result = $con->query($query);
-                if ($result->num_rows > 0) {
-                    $data = mysqli_fetch_array($result);
-
-                ?>
-                    <video width="600" height="400" controls>
-                        <source src="
-                    <?php echo $data['video_url']; ?>" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                <?php } ?>
-            </div>
-           
-            <div class="playlist col-md-4">
-                <div class="card-head">
-                    <h4>Playlist</h4>
-                </div>
-                <div class="card-body">
-                    <br>
+            <div class="row">
+                <div class="col-md-8">
                     <?php
                     $course_id  = $_GET['courseid'];
-                    $user_id = $_SESSION['user_id'];
-                    $query = "SELECT * FROM videos where course_id = $course_id Order By video_id DESC";
+                    $videoid = $_GET['videoid'];
+                    $query = "SELECT * FROM videos where video_id = $videoid";
                     $result = $con->query($query);
                     if ($result->num_rows > 0) {
-                        $i = 1;                   
-                        foreach ($result as $key => $value) {
-                            echo $i++;
-                            ?>
-                            <a class="<?php echo ($value['video_id'] == $_GET['videoid']) ? "text-danger" : ""; ?>" href="?courseid=<?php echo $course_id; ?>&videoid=<?php echo $value['video_id'] ?> "><?php echo $value['video_title'] ?> </a><br>
+                        $data = mysqli_fetch_array($result);
 
-                    <?php } } ?>
-                    <br>
+                    ?>
+                        <video width="600" height="400" controls>
+                            <source src="
+                    <?php echo $data['video_url']; ?>" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    <?php } ?>
+                </div><br>
+                
+                <hr>
+                <div class="playlist col-md-4">
+                    <div class="card-head">
+                        <h4>Playlist</h4>
+                    </div>
+                    <div class="card-body">
+                        <br>
+                        <?php
+                        $course_id  = $_GET['courseid'];
+                        $user_id = $_SESSION['user_id'];
+                        $query = "SELECT * FROM videos where course_id = $course_id Order By video_id DESC";
+                        $result = $con->query($query);
+                        if ($result->num_rows > 0) {
+                            $i = 1;
+                            foreach ($result as $key => $value) {
+                                echo $i++;
+                        ?>
+                                <a class="<?php echo ($value['video_id'] == $_GET['videoid']) ? "text-danger" : ""; ?>" href="?courseid=<?php echo $course_id; ?>&videoid=<?php echo $value['video_id'] ?> "><?php echo $value['video_title'] ?> </a><br>
+
+                        <?php }
+                        } ?>
+                        <br>
+                    </div>
                 </div>
-            </div>
-        </div><!-- end row -->
+            </div><!-- end row -->
 
         </div>
 

@@ -40,7 +40,7 @@
 
                         if (isset($_GET['confirmid'])) {
                             $confirmid = $_GET['confirmid'];
-                            $editquery ="UPDATE orders  
+                            $editquery = "UPDATE orders  
                                 SET
                                 status       = 1
                             WHERE order_id = $confirmid";
@@ -67,15 +67,15 @@
 
                         ?>
                                 <tr>
-                                <td><?php echo $i; ?></td>
+                                    <td><?php echo $i; ?></td>
                                     <td><?php echo $value['course_title'] ?></td>
                                     <td><?php echo $value['discount_price']; ?> BDT</td>
-                                    <td><?php echo $value['first_name']." ".$value['last_name']; ?></td>
+                                    <td><?php echo $value['first_name'] . " " . $value['last_name']; ?></td>
                                     <td><?php echo $value['phone']; ?></td>
-                                    <td><?php echo $value['payment_type']."<br> ".$value['account_no']; ?></td>
-                                    
+                                    <td><?php echo $value['payment_type'] . "<br> " . $value['account_no']; ?></td>
+
                                     <td><?php echo $value['ref'] ?></td>
-                                    
+
                                     <td>
                                         <strong class="text-success">Confirmed</strong>
                                         <!-- <a target="_blank" href="../car-single.php?carid=" class="btn btn-success">Show Details</a> -->

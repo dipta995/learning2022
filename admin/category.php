@@ -38,7 +38,7 @@ if (isset($_POST['create'])) {
 <main>
 
     <div class="container-fluid px-4">
-    <h1 class="mt-4">Create Category <a class="btn btn-info" href="createcar.php">Categories</a></h1>
+    <h1 class="mt-4">Create Category <a class="btn btn-info" href="category.php">Categories</a></h1>
         <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
             <li class="breadcrumb-item active">Categories</li>
@@ -49,14 +49,14 @@ if (isset($_POST['create'])) {
                     <table id="datatablesSimple">
                         <thead>
                             <tr>
-                                <th>No.</th>
+                                <th>Sl</th>
                                 <th>Name</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
-                                <th>No.</th>
+                                <th>Sl</th>
                                 <th>Name</th>
                                 <th>Action</th>
                             </tr>
