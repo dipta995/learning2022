@@ -154,7 +154,7 @@ a {
     padding-left: 0
 }
 
-.check li a {}
+/* .check li a {} */
 
 .authorbox,
 blockquote {
@@ -440,7 +440,7 @@ MEGA MENU
     position: relative;
 }
 
-.yamm .dropdown.yamm-fw .dropdown-menu {}
+/* .yamm .dropdown.yamm-fw .dropdown-menu {} */
 
 .yamm .dropdown {
     position: relative;
@@ -947,7 +947,7 @@ SECTIONS
     overflow: hidden;
     position: relative;
     background-position: top center;
-    vertical-align: sub;
+    /* vertical-align: sub; */
     width: 100%;
     z-index: 2;
 }
@@ -2049,7 +2049,7 @@ MICS
 .loader {
     display: block;
     margin: 20px auto 0;
-    vertical-align: middle;
+    /* vertical-align: middle; */
 }
 
 #preloader {
@@ -2197,32 +2197,40 @@ RESPONSIVE
     .p120 {
         padding-bottom: 8rem !important;
     }
+
     .boxed {
         margin-top: 4rem;
     }
+
     .blog-box,
     .testimonial,
     .stat-count {
         margin: 30px 0;
     }
+
     .m30 {
         margin-top: 30px;
     }
+
     .absolute-widget {
         background-image: none;
     }
+
     .sidebar {
         margin-top: 30px;
     }
+
     .container {
         min-width: 100% !important;
     }
+
     .footer .widget {
         margin: 30px 0;
     }
 }
 
 @media (max-width: 768px) {
+
     .shop-extra .nav-tabs>li>a,
     .shop-extra .nav-tabs>li {
         float: none;
@@ -2230,20 +2238,25 @@ RESPONSIVE
         width: 100%;
         text-align: center;
     }
+
     .shop-extra {
         padding: 30px 10px;
     }
+
     .home-message p {
         font-size: 28px;
     }
+
     .topbar .text-left {
         text-align: center;
     }
+
     .authorbox img {
         float: none;
         margin: 0 0 30px !important;
         min-width: 100px;
     }
+
     .media-left,
     .media>.pull-left {
         display: block;
@@ -2263,12 +2276,14 @@ RESPONSIVE
     .yamm-fw {
         position: relative;
     }
+
     .hassubmenu:hover>ul,
     .yamm-fw:hover>ul {
         visibility: visible;
         opacity: 1;
         top: 100%;
     }
+
     .hassubmenu ul,
     .navbar-nav .yamm-fw ul {
         -webkit-transition: visibility 0.35s ease-in-out, opacity 0.35s ease-in-out, top 0.35s ease-in-out, bottom 0.35s ease-in-out, left 0.35s ease-in-out, right 0.35s ease-in-out;
@@ -2276,6 +2291,7 @@ RESPONSIVE
         -o-transition: visibility 0.35s ease-in-out, opacity 0.35s ease-in-out, top 0.35s ease-in-out, bottom 0.35s ease-in-out, left 0.35s ease-in-out, right 0.35s ease-in-out;
         transition: visibility 0.35s ease-in-out, opacity 0.35s ease-in-out, top 0.35s ease-in-out, bottom 0.35s ease-in-out, left 0.35s ease-in-out, right 0.35s ease-in-out;
     }
+
     .yamm-fw .dropdown-menu {
         min-width: 240px;
         padding: 0;
@@ -2283,6 +2299,7 @@ RESPONSIVE
         -moz-border-radius: 0;
         border-radius: 0;
     }
+
     .hassubmenu>ul,
     .yamm-fw>ul {
         position: absolute;
@@ -2291,9 +2308,11 @@ RESPONSIVE
         display: block;
         opacity: 0;
     }
+
     .yamm-fw>ul li {
         position: relative;
     }
+
     .yamm-fw>ul li:hover>ul {
         visibility: visible;
         opacity: 1;

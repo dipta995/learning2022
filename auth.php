@@ -11,7 +11,7 @@
 include 'Controller/database.php';
 include 'Controller/session.php';
 
-$msg="";
+$msg = "";
 
 // 
 // Create New Account 
@@ -29,16 +29,16 @@ if (isset($_POST['register'])) {
   $phonecheck = $con->query($query2);
 
   if (!preg_match("/^[a-zA-Z-']*$/", $first_name)) {
-    $msg = "Only letters are allowed for first Name";
+    $msg = "Only letters are allowed for first name";
   } elseif (!preg_match("/^[a-zA-Z-']*$/", $last_name)) {
-    $msg = "Only letters are allowed for Last Name";
+    $msg = "Only letters are allowed for last name";
   } elseif (strlen($password) < 8) {
     $msg = "Password must be minimum 8 Digit";
   } elseif (strlen($phone) != 11) {
     $msg = "Phone number must be 11 Digits";
   } elseif (!preg_match("/^(?:\\+88|88)?(01[3-9]\\d{8})/", $phone)) {
     $msg = "Phone number is not valid (First two digits must be '01'!)";
-  }  elseif ($emailcheck->num_rows > 0) {
+  } elseif ($emailcheck->num_rows > 0) {
     $msg = "This email address has already been Registered";
   } elseif ($phonecheck->num_rows > 0) {
     $msg = "This phone number has already been Registered";
@@ -56,33 +56,31 @@ if (isset($_POST['register'])) {
 // 
 // Log in 
 // 
-if(isset($_POST['login'])){
+if (isset($_POST['login'])) {
   $email = $_POST['email'];
   $password = $_POST['password'];
-      $query = "SELECT * FROM users WHERE email='$email' AND password='$password'";
-      $result = $con->query($query);
-      if ($result->num_rows > 0) {
-          $value = mysqli_fetch_array($result);
-          $_SESSION['active'] = "active";
-          $_SESSION['role'] = $value['role'];
-          $_SESSION['first_name'] = $value['first_name'];
-          $_SESSION['last_name'] = $value['last_name'];
-          $_SESSION['email'] = $value['email'];
-          $_SESSION['phone'] = $value['phone'];
-          $_SESSION['user_id'] = $value['id'];
-        
-          if ($value['role']=='admin') {
-             
-            header('Location:admin/index.php');
-          }else{
-            header('Location:index.php');
-          }
-         
-           
-       }else{
-           $msg = "Incorrent Email and Password";
-       } 
-      }
+  $query = "SELECT * FROM users WHERE email='$email' AND password='$password'";
+  $result = $con->query($query);
+  if ($result->num_rows > 0) {
+    $value = mysqli_fetch_array($result);
+    $_SESSION['active'] = "active";
+    $_SESSION['role'] = $value['role'];
+    $_SESSION['first_name'] = $value['first_name'];
+    $_SESSION['last_name'] = $value['last_name'];
+    $_SESSION['email'] = $value['email'];
+    $_SESSION['phone'] = $value['phone'];
+    $_SESSION['user_id'] = $value['id'];
+
+    if ($value['role'] == 'admin') {
+
+      header('Location:admin/index.php');
+    } else {
+      header('Location:index.php');
+    }
+  } else {
+    $msg = "Incorrent Email and Password";
+  }
+}
 
 
 ?>
@@ -93,18 +91,18 @@ if(isset($_POST['login'])){
       <div class="user signinBx">
         <div class="imgBx"><img src="https://raw.githubusercontent.com/WoojinFive/CSS_Playground/master/Responsive%20Login%20and%20Registration%20Form/img1.jpg" alt="" /></div>
         <div class="formBx">
-        
-          
+
+
           <form action="" method="post">
             <h2>Sign In</h2>
             <div class="text-danger">
               <h4 style="color:red;">
-              <?php
+                <?php
                 echo $msg;
-              ?>
+                ?>
               </h4>
-           
-          </div>
+
+            </div>
             <input type="email" name="email" placeholder="email" />
             <input type="password" name="password" placeholder="Password" />
             <input type="submit" name="login" value="Login" />
@@ -120,15 +118,15 @@ if(isset($_POST['login'])){
           <form action="" method="POST">
             <h2>Create an account</h2>
             <div class="text-danger">
-            <h4 style="color:red;">
-              <?php
+              <h4 style="color:red;">
+                <?php
                 echo $msg;
-              ?>
+                ?>
               </h4>
-          </div>
+            </div>
             <input type="text" required name="first_name" placeholder="First name" />
             <input type="text" required name="last_name" placeholder="Last name" />
-            <input type="text" required name="phone"  placeholder="Phone Number" />
+            <input type="text" required name="phone" placeholder="Phone Number" />
             <input type="email" required name="email" placeholder="Email Address" />
             <input type="password" required name="password" placeholder="Password" />
             <input type="submit" name="register" value="Sign Up" />
@@ -151,7 +149,12 @@ if(isset($_POST['login'])){
       box-sizing: border-box;
       font-family: 'Poppins', sans-serif;
     }
-.message{color: red; background-color: #f5f5f5;}
+
+    .message {
+      color: red;
+      background-color: #f5f5f5;
+    }
+
     section {
       position: relative;
       min-height: 100vh;

@@ -41,7 +41,7 @@
                         $move_video      = "../videos/demo/" . $unique_video;
 
                         if (empty($short_description)) {
-                            echo "<span class='error'>Field Must Not be Empty</span>";
+                            echo "<span class='error'>Field must not be empty</span>";
                         } elseif (empty($file_ext)) {
                             echo "<span class='error'>Image is required</span>";
                         } else {

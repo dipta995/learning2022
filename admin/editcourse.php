@@ -11,7 +11,7 @@
                 <form method="post" enctype="multipart/form-data">
                     <?php
                     if (empty($_GET['editid']) || $_GET['editid'] == NULL || !isset($_GET['editid'])) {
-                        echo "<script>window.location='Courses.php';</script>";
+                        echo "<script>window.location='courses.php';</script>";
                     } else {
                         $editid = $_GET['editid'];
                         $query = "SELECT * FROM courses WHERE course_id=$editid";
@@ -54,15 +54,15 @@
                             echo "<span class='error'>Field Must Not be Empty</span>";
                         } elseif (empty($file_ext) && empty($file_ext1)) {
                             $sql = "UPDATE courses  
-                SET
-                course_title        = '$course_title',
-                category_id         = '$category_id',
-                price               = '$price',
-                discount            = '$discount',
-                hours               = '$hours',
-                short_description   = '$short_description',
-                description         = '$description'
-                WHERE course_id     =  $editid";
+                            SET
+                            course_title        = '$course_title',
+                            category_id         = '$category_id',
+                            price               = '$price',
+                            discount            = '$discount',
+                            hours               = '$hours',
+                            short_description   = '$short_description',
+                            description         = '$description'
+                            WHERE course_id     =  $editid";
 
                             if ($con->query($sql) === TRUE) {
                                 move_uploaded_file($file_temp, $move_image);
@@ -72,16 +72,16 @@
                             }
                         } elseif (!empty($file_ext) && empty($file_ext1)) {
                             $sql = "UPDATE courses  
-                SET
-                course_title        = '$course_title',
-                category_id         = '$category_id',
-                price               = '$price',
-                discount            = '$discount',
-                hours               = '$hours',
-                short_description   = '$short_description',
-                description         = '$description',
-                banner              = '$uploaded_image'
-                WHERE course_id     =  $editid";
+                            SET
+                            course_title        = '$course_title',
+                            category_id         = '$category_id',
+                            price               = '$price',
+                            discount            = '$discount',
+                            hours               = '$hours',
+                            short_description   = '$short_description',
+                            description         = '$description',
+                            banner              = '$uploaded_image'
+                            WHERE course_id     =  $editid";
 
                             if ($con->query($sql) === TRUE) {
                                 move_uploaded_file($file_temp, $move_image);
@@ -91,16 +91,16 @@
                             }
                         } elseif (empty($file_ext) && !empty($file_ext1)) {
                             $sql = "UPDATE courses  
-                SET
-                course_title        = '$course_title',
-                category_id         = '$category_id',
-                price               = '$price',
-                discount            = '$discount',
-                hours               = '$hours',
-                short_description   = '$short_description',
-                description         = '$description',
-                demo_video          = '$uploaded_video'
-                WHERE course_id     =  $editid";
+                            SET
+                            course_title        = '$course_title',
+                            category_id         = '$category_id',
+                            price               = '$price',
+                            discount            = '$discount',
+                            hours               = '$hours',
+                            short_description   = '$short_description',
+                            description         = '$description',
+                            demo_video          = '$uploaded_video'
+                            WHERE course_id     =  $editid";
 
                             if ($con->query($sql) === TRUE) {
                                 move_uploaded_file($file_temp1, $move_video);
@@ -110,17 +110,17 @@
                             }
                         } else {
                             $sql = "UPDATE courses  
-                SET
-                course_title        = '$course_title',
-                category_id         = '$category_id',
-                price               = '$price',
-                discount            = '$discount',
-                hours               = '$hours',
-                short_description   = '$short_description',
-                description         = '$description',
-                banner              = '$uploaded_image',
-                demo_video          = '$uploaded_video'
-                WHERE course_id     =  $editid";
+                            SET
+                            course_title        = '$course_title',
+                            category_id         = '$category_id',
+                            price               = '$price',
+                            discount            = '$discount',
+                            hours               = '$hours',
+                            short_description   = '$short_description',
+                            description         = '$description',
+                            banner              = '$uploaded_image',
+                            demo_video          = '$uploaded_video'
+                            WHERE course_id     =  $editid";
 
                             if ($con->query($sql) === TRUE) {
                                 move_uploaded_file($file_temp, $move_image);

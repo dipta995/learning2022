@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
 
     <!-- Mobile Meta -->
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -46,7 +47,7 @@
         echo "<script>window.location='index.php';</script>";
     }
 
-    $role = $_SESSION['role'];    
+    $role = $_SESSION['role'];
     ?>
 
     <div id="wrapper">
@@ -71,9 +72,9 @@
         <!-- END # MODAL LOGIN -->
 
         <header class="header">
-        <div class="topbar clearfix">
+            <div class="topbar clearfix">
                 <div class="container">
-                <div class="row-fluid">
+                    <div class="row-fluid">
                         <div class="col-md-6 col-sm-6 text-left">
                             <p>
                                 <!-- <strong><i class="fa fa-phone"></i></strong> +90 543 123 45 67 &nbsp;&nbsp; -->
@@ -108,31 +109,31 @@
                                     $query = "SELECT * FROM categories where is_active=0 Order By cat_id desc";
                                     $result = $con->query($query);
                                     foreach ($result as $key => $value) {
-                                        
+
                                     ?>
-                                    <li><a href="course-category.php?cat_id=<?php  echo $value['cat_id']?>"><?php  echo $value['cat_name']?></a></li>
+                                        <li><a href="course-category.php?cat_id=<?php echo $value['cat_id'] ?>"><?php echo $value['cat_name'] ?></a></li>
                                     <?php } ?>
                                 </ul>
                             </li>
                             <?php
-                                if (isset($_SESSION['active'])) {
+                            if (isset($_SESSION['active'])) {
 
                             ?>
-                            <li class="dropdown hassubmenu">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo $_SESSION['first_name'] ?> <span class="fa fa-angle-down"></span></a>
-                                <ul class="dropdown-menu" role="menu">
-                                <?php if ($_SESSION['role']=="admin") {
-                                    //echo '<li><a href="profile.php">Admin</a></li>';
-                                }?>
-                                   
-                                    <li><a href="my-courses.php">My Courses</a></li>
-                                    <li><a href="?logout=logout">Logout</a></li>
+                                <li class="dropdown hassubmenu">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo $_SESSION['first_name'] ?> <span class="fa fa-angle-down"></span></a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <?php if ($_SESSION['role'] == "admin") {
+                                            //echo '<li><a href="profile.php">Admin</a></li>';
+                                        } ?>
 
-                                </ul>
-                            </li>
-                            <?php }else{?>
+                                        <li><a href="my-courses.php">My Courses</a></li>
+                                        <li><a href="?logout=logout">Logout</a></li>
+
+                                    </ul>
+                                </li>
+                            <?php } else { ?>
                                 <li><a href="auth.php">Login</a></li>
-                                <?php  } ?>
+                            <?php  } ?>
                             <!-- <li><a href="page-contact.html">Contact</a></li> -->
                             <li class="iconitem"><a href="#" data-toggle="modal" data-target="#login-modal"><i class="fa fa-search"></i></a></li>
                         </ul>

@@ -53,13 +53,7 @@ if (isset($_GET['logout'])) {
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                     <!-- <li><a class="dropdown-item" href="#!">Settings</a></li>
                         <li><a class="dropdown-item" href="#!">Activity Log</a></li> -->
-                    <li>
-                        <hr class="dropdown-divider" />
-                    </li>
-                    <li><a class="dropdown-item" href="?logout=logout">Logout</a></li>
-                    <li>
-                        <hr class="dropdown-divider" />
-                    </li>
+                    <li><a class="dropdown-item" href="?logout=logout">Logout</a></li>                   
                 </ul>
             </li>
         </ul>
@@ -75,14 +69,30 @@ if (isset($_GET['logout'])) {
                             Dashboard
                         </a>
                         <div class="sb-sidenav-menu-heading">Interface</div>
+
+                        <!-- Admins -->
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                            <div class="sb-nav-link-icon"><i class="fas fa-user-circle"></i></div>
+                             Admins
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="admins.php">Admin List</a>
+                                <a class="nav-link" href="create-admin.php">Create New Admin</a>
+                            </nav>
+                        </div>
+
+                        <!-- Categories -->
                         <a class="nav-link" href="category.php">
-                            <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                            <div class="sb-nav-link-icon"><i class="fas fa-list-alt"></i></div>
                             Categories
                         </a>
-
+          
+                        <!-- Courses -->
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts1" aria-expanded="false" aria-controls="collapseLayouts">
-                            <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                            Courses
+                            <div class="sb-nav-link-icon"><i class="fas fa-chalkboard"></i></div>
+                             Courses
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
                         <div class="collapse" id="collapseLayouts1" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
@@ -91,8 +101,10 @@ if (isset($_GET['logout'])) {
                                 <a class="nav-link" href="createcourse.php">Create New Course</a>
                             </nav>
                         </div>
+
+                        <!-- Enroll -->
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts2" aria-expanded="false" aria-controls="collapseLayouts">
-                            <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                            <div class="sb-nav-link-icon"><i class="fas fa-shopping-cart"></i></div>
                             Enroll
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
@@ -102,6 +114,8 @@ if (isset($_GET['logout'])) {
                                 <a class="nav-link" href="confirm-course.php">Confirmed Courses</a>
                             </nav>
                         </div>
+
+                        <!-- Pages -->
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                             <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                             Pages
@@ -118,33 +132,18 @@ if (isset($_GET['logout'])) {
                                         <a class="nav-link" href="../auth.php">Login / Registration</a>
                                     </nav>
                                 </div>
-
-                                <!-- <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
-                                        Error
-                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                    </a>
-                                    <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                                        <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="401.html">401 Page</a>
-                                            <a class="nav-link" href="404.html">404 Page</a>
-                                        </nav>
-                                    </div> -->
                             </nav>
                         </div>
-                        <!-- <div class="sb-sidenav-menu-heading">Addons</div>
-                            <a class="nav-link" href="charts.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                                Charts
-                            </a>
-                            <a class="nav-link" href="tables.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                Tables
-                            </a> -->
+
                     </div>
                 </div>
                 <div class="sb-sidenav-footer">
-                    <div class="small">Logged in as:</div>
-                    Start Bootstrap
+                    <div class="small">
+                        Logged in as:
+                        <?php if (isset($_SESSION['active'])) {
+                            echo $_SESSION['first_name']." ".$_SESSION['last_name'];
+                        } ?>
+                    </div>
                 </div>
             </nav>
         </div>

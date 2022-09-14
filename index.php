@@ -8,7 +8,7 @@
             <small>Edulogy is the ideal choice for your organization, your business and your online education system. Create your online course now with unlimited page templates, color options, and menu features.</small>
             <div class="btn-wrapper">
                 <div class="text-center">
-                    <a href="#" class="btn btn-primary wow slideInLeft">Read More</a> &nbsp;&nbsp;&nbsp;<a href="#" class="btn btn-default wow slideInRight">Buy Now</a>
+                    <a href="#" class="btn btn-primary wow slideInLeft">Read More</a> &nbsp;&nbsp;&nbsp;<a href="courses.php" class="btn btn-default wow slideInRight">Buy Now</a>
                 </div>
             </div><!-- end row -->
         </div>
@@ -17,7 +17,7 @@
         <span>Explore <i class="fa fa-angle-down"></i></span>
     </div>
 </section>
-  
+
 
 <section class="section gb">
     <div class="container">
@@ -28,44 +28,45 @@
 
         <div id="owl-01" class="owl-carousel owl-theme owl-theme-01">
             <?php
-                $query = "SELECT * FROM courses left join categories on categories.cat_id=courses.category_id where courses.is_active=0  Order By course_id desc limit 6";
-                $result = $con->query($query);
-                if ($result->num_rows > 0) {
-                    foreach ($result as $key => $value) {
+            $query = "SELECT * FROM courses left join categories on categories.cat_id=courses.category_id where courses.is_active=0  Order By course_id desc limit 6";
+            $result = $con->query($query);
+            if ($result->num_rows > 0) {
+                foreach ($result as $key => $value) {
             ?>
-            <div class="caro-item">
-                <div class="course-box">
-                    <div class="image-wrap entry">
-                        <img style="width: 272px; height:250px;" src="<?php echo  $value['banner'];?>" alt="" class="img-responsive">
-                        <div class="magnifier">
-                                <a href="single-course.php?courseid=<?php echo $value['course_id'] ?>" title=""><i class="flaticon-add"></i></a>
-                        </div>
-                    </div><!-- end image-wrap -->
-                    <div class="course-details">
-                        <h4>
-                            <small><?php echo  $value['cat_name'];?></small>
-                            <a href="single-course.php?courseid=<?php echo $value['course_id'] ?>" title=""><?php echo  $value['course_title'];?></a>
-                        </h4>
-                        <p><?php echo  $value['short_description'];?></p>
-                    </div><!-- end details -->
-                    <div class="course-footer clearfix">
-                        <div class="pull-left">
-                            <ul class="list-inline">
-                                <li><a href="#"><i class="fa fa-user"></i> 21</a></li>
-                                <li><a href="#"><i class="fa fa-clock-o"></i> <?php echo  $value['hours'];?> Min.</a></li>
-                            </ul>
-                        </div><!-- end left -->
+                    <div class="caro-item">
+                        <div class="course-box">
+                            <div class="image-wrap entry">
+                                <img style="width: 272px; height:250px;" src="<?php echo  $value['banner']; ?>" alt="" class="img-responsive">
+                                <div class="magnifier">
+                                    <a href="single-course.php?courseid=<?php echo $value['course_id'] ?>" title=""><i class="flaticon-add"></i></a>
+                                </div>
+                            </div><!-- end image-wrap -->
+                            <div class="course-details">
+                                <h4>
+                                    <small><?php echo  $value['cat_name']; ?></small>
+                                    <a href="single-course.php?courseid=<?php echo $value['course_id'] ?>" title=""><?php echo  $value['course_title']; ?></a>
+                                </h4>
+                                <p><?php echo  $value['short_description']; ?></p>
+                            </div><!-- end details -->
+                            <div class="course-footer clearfix">
+                                <div class="pull-left">
+                                    <ul class="list-inline">
+                                        <li><a href="#"><i class="fa fa-user"></i> 21</a></li>
+                                        <li><a href="#"><i class="fa fa-clock-o"></i> <?php echo  $value['hours']; ?> Min.</a></li>
+                                    </ul>
+                                </div><!-- end left -->
 
-                        <div class="pull-right">
-                            <ul class="list-inline">
-                                <li><a href="#">৳ <?php echo round( $value['price']-(($value['price']*$value['discount'])/100));?></a></li>
-                            </ul>
-                        </div><!-- end left -->
-                    </div><!-- end footer -->
-                </div><!-- end box -->
-            </div><!-- end col -->
-            <?php } }?>
-            
+                                <div class="pull-right">
+                                    <ul class="list-inline">
+                                        <li><a href="#">৳ <?php echo round($value['price'] - (($value['price'] * $value['discount']) / 100)); ?></a></li>
+                                    </ul>
+                                </div><!-- end left -->
+                            </div><!-- end footer -->
+                        </div><!-- end box -->
+                    </div><!-- end col -->
+            <?php }
+            } ?>
+
         </div><!-- end row -->
 
         <hr class="invis">

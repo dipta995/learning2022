@@ -255,15 +255,15 @@ $catid = $value['category_id'];
                                                         </h3>
                                                     </div>
                                                     <div class="col-md-8">
-                                                        
+
                                                         <?php
                                                         $qry = "SELECT * FROM review LEFT JOIN users ON review.customer_id = users.id
                                                         where course_id = $courseid";
                                                         $res = $con->query($qry);
                                                         if ($res->num_rows) { ?>
                                                             <h4>Student Review</h4>
-                                                           <?php foreach ($res as $value) {
-                                                        ?>
+                                                            <?php foreach ($res as $value) {
+                                                            ?>
                                                                 <div class="shop-extra">
                                                                     <p>Student Name: <?php echo $value['first_name'] . " " . $value['last_name']; ?></p>
                                                                     <p>Review: <?php echo $value['review']; ?></p>
@@ -306,11 +306,13 @@ $catid = $value['category_id'];
                                                                     </p>
                                                                 </div>
                                                         <?php }
-                                                        } else { echo "<h4>No Review Found!</h4>";}?>
+                                                        } else {
+                                                            echo "<h4>No Review Found!</h4>";
+                                                        } ?>
                                                     </div>
                                                 </div>
                                             </form>
-                                        </div>                               
+                                        </div>
                                     </div>
                                 </div>
                             </div>

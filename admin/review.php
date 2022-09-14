@@ -88,33 +88,33 @@ include '../Controller/database.php';
                                     <td><?php echo $value['review'] ?></td>
                                     <td>
                                         <?php
-                                        if($value['rating'] == 0){
+                                        if ($value['rating'] == 0) {
                                             echo "No rating!";
-                                        } elseif($value['rating'] == 1){
+                                        } elseif ($value['rating'] == 1) {
                                             echo "<i class='fa fa-star star-checked'></i>
                                             <i class='fa fa-star'></i>
                                             <i class='fa fa-star'></i>
                                             <i class='fa fa-star'></i>
                                             <i class='fa fa-star'></i>";
-                                        } elseif($value['rating'] == 2){
+                                        } elseif ($value['rating'] == 2) {
                                             echo "<i class='fa fa-star star-checked'></i>
                                             <i class='fa fa-star star-checked'></i>
                                             <i class='fa fa-star'></i>
                                             <i class='fa fa-star'></i>
                                             <i class='fa fa-star'></i>";
-                                        } elseif($value['rating'] == 3){
+                                        } elseif ($value['rating'] == 3) {
                                             echo "<i class='fa fa-star star-checked'></i>
                                             <i class='fa fa-star star-checked'></i>
                                             <i class='fa fa-star star-checked'></i>
                                             <i class='fa fa-star'></i>
                                             <i class='fa fa-star'></i>";
-                                        } elseif($value['rating'] == 4){
+                                        } elseif ($value['rating'] == 4) {
                                             echo "<i class='fa fa-star star-checked'></i>
                                             <i class='fa fa-star star-checked'></i>
                                             <i class='fa fa-star star-checked'></i>
                                             <i class='fa fa-star star-checked'></i>
                                             <i class='fa fa-star'></i>";
-                                        }elseif($value['rating'] == 5){
+                                        } elseif ($value['rating'] == 5) {
                                             echo "<i class='fa fa-star star-checked'></i>
                                             <i class='fa fa-star star-checked'></i>
                                             <i class='fa fa-star star-checked'></i>

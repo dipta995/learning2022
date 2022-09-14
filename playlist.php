@@ -40,7 +40,7 @@ include 'header.php';
                         </video>
                     <?php } ?>
                 </div><br>
-                
+
                 <hr>
                 <div class="playlist col-md-4">
                     <div class="card-head">
