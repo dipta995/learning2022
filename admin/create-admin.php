@@ -89,15 +89,7 @@
                                         <label for="inputPassword">Password</label>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-floating mb-3 mb-md-0">
-                                        <select class="form-control" name="role">
-                                            <option>-- Choose Role --</option>
-                                            <option value="admin">Admin</option>
-                                        </select>
-                                        <label for="inputRole">Role</label>
-                                    </div>
-                                </div>
+                                
                             </div>
                         </div>
                         <div class="mt-4 mb-0">

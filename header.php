@@ -123,10 +123,12 @@
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo $_SESSION['first_name'] ?> <span class="fa fa-angle-down"></span></a>
                                     <ul class="dropdown-menu" role="menu">
                                         <?php if ($_SESSION['role'] == "admin") {
-                                            //echo '<li><a href="profile.php">Admin</a></li>';
+                                            echo '<li><a href="profile.php">Admin</a></li>';
                                         } ?>
 
                                         <li><a href="my-courses.php">My Courses</a></li>
+                                        <li><a href="change-password.php">Change Password</a></li>
+
                                         <li><a href="?logout=logout">Logout</a></li>
 
                                     </ul>

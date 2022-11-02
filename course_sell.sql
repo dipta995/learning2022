@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 06, 2022 at 11:14 AM
+-- Generation Time: Nov 02, 2022 at 08:47 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -148,6 +148,7 @@ CREATE TABLE `users` (
   `password` varchar(191) DEFAULT NULL,
   `role` varchar(100) DEFAULT NULL,
   `is_active` tinyint(4) NOT NULL,
+  `flag` tinyint(4) NOT NULL DEFAULT 0,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -155,11 +156,11 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `phone`, `password`, `role`, `is_active`, `created_at`) VALUES
-(1, 'Admin', 'Admin', 'admin@gmail.com', '01632315608', '12345678', 'admin', 0, '2022-03-01 16:53:03'),
-(2, 'Mahjuba', 'Tasrin', 'mahjubatasrin420@gmail.com', '01920069653', 'mithshan777', 'admin', 0, '2022-03-18 09:41:54'),
-(3, 'Mithila', 'Rabbany', 'mithilarabbany12@gmail.com', '01717576087', '12345678', 'user', 0, '2022-05-27 11:03:24'),
-(4, 'Supty', 'Ahmed', 'supty@gmail.com', '01346767556', '12345678', 'user', 0, '2022-06-28 13:54:08');
+INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `phone`, `password`, `role`, `is_active`, `flag`, `created_at`) VALUES
+(1, 'Admin', 'Admin', 'admin@gmail.com', '01632315608', '123456789', 'admin', 0, 1, '2022-03-01 16:53:03'),
+(2, 'Mahjuba', 'Tasrin', 'mahjubatasrin420@gmail.com', '01920069653', 'mithshan777', 'admin', 0, 0, '2022-03-18 09:41:54'),
+(3, 'Mithila', 'Rabbany', 'mithilarabbany12@gmail.com', '01717576087', '12345678', 'user', 0, 0, '2022-05-27 11:03:24'),
+(4, 'Supty', 'Ahmed', 'supty@gmail.com', '01346767556', '12345678', 'user', 0, 0, '2022-06-28 13:54:08');
 
 -- --------------------------------------------------------
 

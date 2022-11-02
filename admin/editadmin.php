@@ -26,8 +26,6 @@
                             $last_name  = mysqli_real_escape_string($con, $_POST['last_name']);
                             $email      = mysqli_real_escape_string($con, $_POST['email']);
                             $phone      = mysqli_real_escape_string($con, $_POST['phone']);
-                            $password   = mysqli_real_escape_string($con, $_POST['password']);
-                            $role       = mysqli_real_escape_string($con, $_POST['role']);
 
                             if (empty($first_name) || empty($last_name)) {
                                 echo "<span class='error'>Field must not be empty!</span>";
@@ -35,8 +33,6 @@
                                 echo "<span class='error'>Only letters are allowed for first name</span>";
                             } elseif (!preg_match("/^[a-zA-Z-']*$/", $last_name)) {
                                 echo "<span class='error'>Only letters are allowed for last name</span>";
-                            } elseif (strlen($password) < 8) {
-                                echo "<span class='error'>Password must be minimum 8 Digit</span>";
                             } elseif (strlen($phone) != 11) {
                                 echo "<span class='error'>Phone number must be 11 Digits</span>";
                             } elseif (!preg_match("/^(?:\\+88|88)?(01[3-9]\\d{8})/", $phone)) {
@@ -48,8 +44,7 @@
                                 last_name    = '$last_name',
                                 email        = '$email',
                                 phone        = '$phone',
-                                password     = '$password',
-                                role         = '$role'
+                                role         = 'admin'
                                 WHERE id     =  $editid";
                                 if ($con->query($sql) === TRUE) {                               
                                     echo "<span class='success'>Updated successfully!</span>";
@@ -92,23 +87,7 @@
                                 </div>
                             </div>
 
-                            <div class="row mb-3">
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input required class="form-control" type="password" name="password" value="<?php echo $value['password']; ?>" />
-                                        <label for="inputPassword">Password</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-floating mb-3 mb-md-0">
-                                        <select class="form-control" name="role">
-                                            <option value="<?php echo $value['role']; ?>"><?php echo $value['role']; ?></option>
-                                            <option value="admin">admin</option>
-                                        </select>
-                                        <label for="inputRole">Role</label>
-                                    </div>
-                                </div>
-                            </div>
+                           
                         </div>
                         <div class="mt-4 mb-0">
                             <div class="d-grid">

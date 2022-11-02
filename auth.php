@@ -59,12 +59,13 @@ if (isset($_POST['register'])) {
 if (isset($_POST['login'])) {
   $email = $_POST['email'];
   $password = $_POST['password'];
-  $query = "SELECT * FROM users WHERE email='$email' AND password='$password'";
+  $query = "SELECT * FROM users WHERE email='$email' and  is_active ='0' AND password='$password'";
   $result = $con->query($query);
   if ($result->num_rows > 0) {
     $value = mysqli_fetch_array($result);
     $_SESSION['active'] = "active";
     $_SESSION['role'] = $value['role'];
+    $_SESSION['flag'] = $value['flag'];
     $_SESSION['first_name'] = $value['first_name'];
     $_SESSION['last_name'] = $value['last_name'];
     $_SESSION['email'] = $value['email'];

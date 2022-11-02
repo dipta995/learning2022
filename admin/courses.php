@@ -64,7 +64,9 @@
                                 <a href="addvideo.php?addid=<?php echo $value['course_id']; ?>" class="btn btn-success btn-sm">Add Video</a>
                                 <a href="video-single.php?vidid=<?php echo $value['course_id']; ?>" class="btn btn-success btn-sm">All Video</a>
                                 <a href="review.php?revid=<?php echo $value['course_id']; ?>" class="btn btn-primary btn-sm">Review</a>
-                                <a onclick="return confirm('Are you sure to Delete?');" href="?delid=<?php echo $value['course_id']; ?>" class="btn btn-danger btn-sm">Delete</a>
+                                <?php   if ($_SESSION['flag']==1 && $_SESSION['role']=='admin') { ?>
+                                <a onclick="return confirm('Are you sure to Delete?');" href="?delid=<?php echo $value['course_id']; ?>" class="btn btn-danger">Delete</a>
+                                <?php } ?>                            
                             </td>
                         </tr>
                         <?php }

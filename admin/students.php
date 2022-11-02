@@ -1,7 +1,7 @@
 <?php include 'header.php'; ?>
 <main>
     <div class="container-fluid px-4">
-        <h1 class="mt-4">Course List <a class="btn btn-info" href="create-admin.php">Create Admin</a></h1>
+        <h1 class="mt-4">Student List <a class="btn btn-info" href="students.php">Reload</a></h1>
         <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
             <li class="breadcrumb-item active"></li>
@@ -45,7 +45,7 @@
                             WHERE id = $delid";
                             $delete = $con->query($DELquery);
                             if ($delete) {
-                                echo "<script>window.location='admins.php';</script>";
+                                echo "<script>window.location='students.php';</script>";
                             }
                         }
                         if (isset($_GET['unlock'])) {
@@ -56,11 +56,11 @@
                             WHERE id = $delid";
                             $delete = $con->query($DELquery);
                             if ($delete) {
-                                echo "<script>window.location='admins.php';</script>";
+                                echo "<script>window.location='students.php';</script>";
                             }
                         }
 
-                        $query = "SELECT * FROM users where role='admin'";
+                        $query = "SELECT * FROM users where role='user'";
                         $result = $con->query($query);
                         if ($result->num_rows > 0) {
                             foreach ($result as $key => $value) {
@@ -82,15 +82,13 @@
 
                             <td>
                             <?php   if ($_SESSION['flag']==1 && $_SESSION['role']=='admin') { ?>
-                                <a class="btn btn-info" href="editadmin.php?editid=<?php echo $value['id']; ?>">Edit</a>
+
                             <?php  
                             if ($value['is_active']==0) { ?>
                                 <a onclick="return confirm('Are you sure to Inactive?');" href="?lock=<?php echo $value['id']; ?>" class="btn btn-info">Inactive</a>
                                 <?php }elseif ($value['is_active']==1) { ?>
                                     <a onclick="return confirm('Are you sure to active?');" href="?unlock=<?php echo $value['id']; ?>" class="btn btn-danger">Active</a>
-                            <?php }else {
-                                
-                            } ?>
+                            <?php } ?>
                             <?php } ?>
 
                             </td>
