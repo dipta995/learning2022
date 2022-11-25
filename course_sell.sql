@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 02, 2022 at 08:47 PM
+-- Generation Time: Nov 25, 2022 at 05:58 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -76,7 +76,7 @@ INSERT INTO `courses` (`course_id`, `category_id`, `course_title`, `banner`, `sh
 (5, 2, 'Illustration', 'image/a80bbc797a.jpg', ' Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s  ', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. ', '2000', '10', '30', 0, 0, NULL, 0, '2022-03-08 18:44:25'),
 (6, 6, 'Cooking', 'image/26d70f4ac0.png', '          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s              ', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.         ', '3000', '20', '20', 0, 0, 'videos/demo/881188b938.mp4', 0, '2022-03-18 09:56:59'),
 (9, 3, 'JavaScript', 'image/3e5d4207bc.png', '    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s    ', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s    ', '4000', '10', '24', 0, 0, 'videos/demo/55be90103d.mp4', 0, '2022-06-28 16:48:18'),
-(11, 3, 'HTML', 'image/0509579550.png', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s', '3000', '10', '20', 0, 0, 'videos/12f4dca522.mp4', 0, '2022-06-28 17:47:59');
+(11, 3, 'HTML', 'image/0509579550.png', ' Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s ', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s ', '3000', '10', '20', 0, 0, 'videos/demo/4073befccc.mp4', 0, '2022-06-28 17:47:59');
 
 -- --------------------------------------------------------
 
@@ -103,10 +103,12 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`order_id`, `course_id`, `course_price`, `discount_price`, `enroll_at`, `customer_id`, `payment_type`, `payment_no`, `account_no`, `ref`, `status`) VALUES
-(1, 6, '1000', '800', '2022-05-11 09:34:07', 2, 'Bkash', '', '1215469846', '87', 1),
-(14, 6, '3000', '2400', '2022-06-30 06:27:00', 1, 'Bkash', '', '12345678900', '234', 1),
-(15, 5, '2000', '1800', '2022-06-29 19:36:00', 1, 'Bkash', '', '12345678900', '657', 1),
-(19, 11, '3000', '2700', '2022-08-06 05:05:00', 4, 'Rocket', '01458756873', '01568767574', '657', 0);
+(1, 6, '1000', '800', '2022-05-11 09:34:07', 2, 'Bkash', '01356768965', '1215469846', '87', 1),
+(14, 6, '3000', '2400', '2022-06-30 06:27:00', 1, 'Bkash', '01457687987', '12345678900', '234', 1),
+(15, 5, '2000', '1800', '2022-06-29 19:36:00', 1, 'Bkash', '01345765876', '12345678900', '657', 1),
+(19, 11, '3000', '2700', '2022-08-06 05:05:00', 4, 'Rocket', '01458756873', '01568767574', '657', 1),
+(27, 11, '3000', '2700', '2022-09-12 19:56:00', 1, 'Bkash', '01458756873', '01348765767', '245', 1),
+(28, 11, '3000', '2700', '2022-09-13 01:32:00', 3, 'Bkash', '01458756873', '01348765767', '245', 1);
 
 -- --------------------------------------------------------
 
@@ -127,11 +129,8 @@ CREATE TABLE `review` (
 --
 
 INSERT INTO `review` (`review_id`, `customer_id`, `rating`, `review`, `course_id`) VALUES
-(11, 1, 4, 'Et eaque et distinct', 11),
-(12, 2, 5, 'Odio et fugiat dolo', 11),
-(13, 3, 3, 'Quae nostrud volupta', 11),
-(14, 1, 5, 'Iste excepteur totam', 9),
-(15, 1, 5, 'Est qui est obcaeca', 6);
+(30, 1, 5, 'Good', 11),
+(31, 4, 4, 'great', 11);
 
 -- --------------------------------------------------------
 
@@ -157,10 +156,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `phone`, `password`, `role`, `is_active`, `flag`, `created_at`) VALUES
-(1, 'Admin', 'Admin', 'admin@gmail.com', '01632315608', '123456789', 'admin', 0, 1, '2022-03-01 16:53:03'),
-(2, 'Mahjuba', 'Tasrin', 'mahjubatasrin420@gmail.com', '01920069653', 'mithshan777', 'admin', 0, 0, '2022-03-18 09:41:54'),
-(3, 'Mithila', 'Rabbany', 'mithilarabbany12@gmail.com', '01717576087', '12345678', 'user', 0, 0, '2022-05-27 11:03:24'),
-(4, 'Supty', 'Ahmed', 'supty@gmail.com', '01346767556', '12345678', 'user', 0, 0, '2022-06-28 13:54:08');
+(1, 'Dipta', 'Dey', 'admin@gmail.com', '01632315600', '12345678', 'admin', 0, 0, '2022-03-01 16:53:03'),
+(3, 'Mithila', 'Rabbany', 'mithilarabbany12@gmail.com', '01717576087', '12345678', 'user', 0, 0, '2022-05-27 11:03:24');
 
 -- --------------------------------------------------------
 
@@ -183,7 +180,8 @@ INSERT INTO `videos` (`video_id`, `video_title`, `video_url`, `course_id`) VALUE
 (1, 'Japanese', 'videos/course/ca1a92a778.mp4', 6),
 (2, 'Chinese', 'videos/course/ddcd943a40.mp4', 6),
 (3, 'Italian', 'videos/course/d05a648ccb.mp4', 6),
-(4, 'JavaScript', 'videos/course/6ebcfb3646.mp4', 9);
+(4, 'JavaScript', 'videos/course/6ebcfb3646.mp4', 9),
+(6, 'html', 'videos/course/76bcd2bc71.mp4', 11);
 
 --
 -- Indexes for dumped tables
@@ -246,25 +244,25 @@ ALTER TABLE `courses`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `review`
 --
 ALTER TABLE `review`
-  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `videos`
 --
 ALTER TABLE `videos`
-  MODIFY `video_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `video_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables

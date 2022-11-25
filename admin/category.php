@@ -14,7 +14,7 @@ if (isset($_GET['editid']) && isset($_POST['edit'])) {
     $catname = $_POST['cat_name'];
     $editquery = "UPDATE categories  
     SET
-    cat_name       = '$catname'
+    cat_name     = '$catname'
     WHERE cat_id = $editid";
     $edit = $con->query($editquery);
     if ($edit) {
@@ -78,7 +78,6 @@ $result = $con->query($query);
 
                         </tbody>
                     </table>
-
                 </div>
             </div>
             <div class="card-body col-md-4">

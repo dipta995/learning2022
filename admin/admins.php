@@ -35,8 +35,6 @@
                     </tfoot>
                     <tbody>
                         <?php
-
-
                         if (isset($_GET['lock'])) {
                             $delid = $_GET['lock'];
                             $DELquery = "UPDATE users  
@@ -97,8 +95,6 @@
                         </tr>
                         <?php }
                         } ?>
-
-
                     </tbody>
                 </table>
 
